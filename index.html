@@ -5,6 +5,16 @@
   <title>The Forsaken Isle</title>
   <link rel="icon" href="Icon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JN4W6XQJ5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-0JN4W6XQJ5');
+  </script>
+
   <style>
     html, body {
       margin: 0;
@@ -80,6 +90,21 @@
       background: #222;
     }
 
+    .stats-button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      font-size: 0.95em;
+      border-radius: 6px;
+      background: #222;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .stats-button:hover {
+      background-color: #444;
+    }
+
     footer {
       font-size: 0.8em;
       color: white;
@@ -112,7 +137,7 @@
   <div id="wrapper">
     <div class="title">The Forsaken Isle</div>
 
-     <div class="description">
+    <div class="description">
       Step into a vibrant pixel-art world of adventure, mystery, and danger. Battle powerful bosses, face off against formidable enemies, and befriend unique characters as you explore diverse environments. Delve into hidden caves, uncover ancient secrets, and solve intriguing mysteries. With a rich, immersive world teeming with animals and challenges, your journey will test your skills, wit, and courage at every turn. Will you uncover the truth and conquer the unknown?
     </div>
 
@@ -124,10 +149,26 @@
       Rate the Game
     </a>
 
+    <button class="stats-button" onclick="checkPassword()">
+      View Game Stats
+    </button>
+
     <footer>
-      Site by ChatGPT | Game by <a href="https://scratch.mit.edu/users/sullydux/" target="_blank">sullydux</a>
+      Site by ChatGPT | Game by <a href="https://scratch.mit.edu/users/sullydux/" target="_blank">sullydux</a><br>
+      Hosted on <a href="https://github.com/sullydux/The-Forsaken-Isle" target="_blank">GitHub</a>
     </footer>
   </div>
+
+  <script>
+    function checkPassword() {
+      const input = prompt("Enter password:");
+      if (input === "coding=fun") {
+        window.open("https://analytics.google.com/analytics/web/", "_blank");
+      } else {
+        alert("Incorrect password.");
+      }
+    }
+  </script>
 
 </body>
 </html>
