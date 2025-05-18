@@ -5,6 +5,16 @@
   <title>The Forsaken Isle</title>
   <link rel="icon" href="Icon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <!-- ✅ Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JN4W6XQJ5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0JN4W6XQJ5');
+  </script>
+
   <style>
     html, body {
       margin: 0;
@@ -15,9 +25,9 @@
       font-family: 'Orbitron', sans-serif;
       background-color: #3c9141;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      animation: fadeIn 1s ease-out;
     }
 
     #wrapper {
@@ -31,6 +41,10 @@
       padding: 10px;
       box-sizing: border-box;
       text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 1s ease-out forwards;
+      animation-delay: 0.2s;
     }
 
     .title {
@@ -38,6 +52,9 @@
       color: white;
       text-shadow: 2px 2px #333;
       margin: 0;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.4s;
     }
 
     .description {
@@ -50,6 +67,9 @@
       border: 1px solid rgba(255, 255, 255, 0.3);
       padding: 12px;
       margin: 8px 0;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.6s;
     }
 
     .game-wrapper {
@@ -59,6 +79,7 @@
       align-items: center;
       justify-content: center;
       max-height: 80%;
+      margin-top: 10px;
     }
 
     .game-frame {
@@ -77,21 +98,30 @@
       background: black;
       color: white;
       text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.8s;
     }
 
     .rating-link:hover {
       background: #222;
+      transform: scale(1.05);
     }
 
     footer {
       font-size: 0.8em;
       color: white;
       margin-top: 5px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1s;
     }
 
     footer a {
       color: white;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     footer a:hover {
@@ -111,16 +141,29 @@
       cursor: pointer;
       z-index: 999;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .stats-button:hover {
       background-color: rgba(0, 0, 0, 0.9);
+      transform: scale(1.05);
     }
 
     @media (max-height: 800px) {
       .description {
         display: none;
       }
+    }
+
+    /* ✨ Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -151,13 +194,24 @@
 
   <script>
     function checkPassword() {
+      if (localStorage.getItem("authOK") === "true") {
+        openAnalytics();
+        return;
+      }
+
       const input = prompt("Enter password:");
       if (input === "coding=fun") {
-        window.open("https://analytics.google.com/analytics/web/#/p489780454/reports/dashboard?r=reporting-hub", "_blank");
+        localStorage.setItem("authOK", "true");
+        openAnalytics();
       } else {
         alert("Incorrect password.");
       }
+
+      function openAnalytics() {
+        window.open("https://analytics.google.com/analytics/web/#/p489780454/reports/intelligenthome?params=_u..nav%3Dmaui", "_blank");
+      }
     }
   </script>
+
 </body>
 </html>
