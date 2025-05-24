@@ -299,5 +299,116 @@
       "How to find: they are in areas with extreme cold",
       "Use: Eat it to get heat resistance"
     ]
+  },
+  {
+    "title": "Coal",
+    "category": "Item",
+    "content": [
+      "How to find: Mine rocks with pickaxe",
+      "Use: fuel for furnace, makes torches and campfire"
+    ]
+  },
+  {
+    "title": "Bone",
+    "category": "Item",
+    "content": [
+      "How to find: Kill goblins",
+      "Use: weapon upgrades"
+    ]
+  },
+  {
+    "title": "Iron",
+    "category": "Item",
+    "content": [
+      "How to get: smelt iron ore in furnace",
+      "Use: makes weapons and tools"
+    ]
+  },
+  {
+    "title": "String",
+    "category": "Item",
+    "content": [
+      "How to find: Kill spiders",
+      "Use: make bow"
+    ]
+  },
+  {
+    "title": "Torch",
+    "category": "Item",
+    "content": [
+      "Recipe: 2 sticks and 1 coal",
+      "Use: lights up dark areas"
+    ]
+  },
+  {
+    "title": "Furnace",
+    "category": "Item",
+    "content": [
+      "Recipe: 8 stone",
+      "How to use: click on it to open the furnace menu and the controls are on the menu",
+      "Use: smelts items and lights up dark areas"
+    ]
+  },
+  {
+    "title": "Portal",
+    "category": "Item",
+    "content": [
+      "Recipe: 8 iron",
+      "Use: place it and enter it to teleport to a boss dimension"
+    ]
+  },
+  {
+    "title": "Shield",
+    "category": "Protection",
+    "content": [
+      "Recipe: 1 iron and 6 logs",
+      "Use: protect yourself from damage",
+      "Protection: 5/16"
+    ]
+  },
+  {
+    "title": "Iron Chestplate",
+    "category": "Protection",
+    "content": [
+      "Recipe: 8 iron",
+      "Use: protect yourself from damage",
+      "Protection: 7/16"
+    ]
+  },
+  {
+    "title": "Chainmail Vest",
+    "category": "Protection",
+    "content": [
+      "Recipe: 4 chains",
+      "Use: protect yourself from damage",
+      "Protection: 5.5/16"
+    ]
+  },
+  {
+    "title": "Leather Coat",
+    "category": "Protection",
+    "content": [
+      "Recipe: 8 leather",
+      "Use: protect yourself from damage",
+      "Protection: 2/16"
+    ]
+  },
+  {
+    "title": "Warm Chainmail Vest",
+    "category": "Protection",
+    "content": [
+      "Recipe: 4 chains and 4 leather",
+      "Use: protect yourself from damage",
+      "Protection: 5.7/16"
+    ]
+  },
+  {
+    "title": "Miners Helmet",
+    "category": "Protection",
+    "content": [
+      "Recipe: 3 iron, 2 leather, and 1 coal",
+      "Use: protect yourself from damage",
+      "Protection: 3/16"
+    ]
   }
 ]
