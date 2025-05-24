@@ -63,6 +63,36 @@
       padding: 0 6px;
       font-size: 0.75rem;
       margin-left: 0.5rem;
+      text-transform: capitalize;
+    }
+
+    .card-rarity {
+      margin-left: 0.5rem;
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      text-transform: capitalize;
+      font-weight: bold;
+    }
+
+    .rarity-common {
+      background-color: #aaa;
+      color: #222;
+    }
+
+    .rarity-uncommon {
+      background-color: #3cb043;
+      color: white;
+    }
+
+    .rarity-rare {
+      background-color: #3399ff;
+      color: white;
+    }
+
+    .rarity-legendary {
+      background-color: #f1c40f;
+      color: #000;
     }
 
     .hidden {
@@ -84,7 +114,7 @@
 </head>
 <body>
 
-This is still in develepment so not everything is in the wiki yet.
+  This is still in development so not everything is in the wiki yet.
 
   <div class="header">
     <input type="text" id="search" placeholder="Search items...">
@@ -98,6 +128,7 @@ This is still in develepment so not everything is in the wiki yet.
       <option value="Food">Food</option>
       <option value="Tool">Tool</option>
       <option value="Protection">Protection</option>
+      <option value="Monster">Monster</option>
     </select>
   </div>
 
@@ -119,14 +150,30 @@ This is still in develepment so not everything is in the wiki yet.
       const container = document.getElementById('card-container');
       container.innerHTML = '';
 
-      items.forEach(({ title, category, content }) => {
+      items.forEach(({ title, category, content, rarity }) => {
         const card = document.createElement('div');
         card.className = 'card';
         card.setAttribute('data-category', category);
 
         const titleElement = document.createElement('h2');
         titleElement.className = 'card-title';
-        titleElement.innerHTML = `${title}<span class="card-category">${category}</span>`;
+
+        const categoryBadge = document.createElement('span');
+        categoryBadge.className = 'card-category';
+        categoryBadge.textContent = category;
+        titleElement.textContent = title;
+        titleElement.appendChild(categoryBadge);
+
+        // Clean and validate rarity
+        const allowedRarities = ['common', 'uncommon', 'rare', 'legendary'];
+        const rarityClean = rarity?.trim().toLowerCase();
+
+        if (allowedRarities.includes(rarityClean)) {
+          const rarityBadge = document.createElement('span');
+          rarityBadge.className = `card-rarity rarity-${rarityClean}`;
+          rarityBadge.textContent = rarityClean.charAt(0).toUpperCase() + rarityClean.slice(1);
+          titleElement.appendChild(rarityBadge);
+        }
 
         const contentWrapper = document.createElement('div');
         content.forEach(line => {
@@ -168,4 +215,6 @@ This is still in develepment so not everything is in the wiki yet.
     });
 
     loadItems();
-  </script></html>
+  </script>
+</body>
+</html>

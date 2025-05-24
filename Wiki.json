@@ -12,6 +12,7 @@
   {
     "title": "Diamnond Mace",
     "category": "Weapon",
+    "rarity": "legendary",
     "content": [
       "Function: Harms and cuts down trees",
       "How to Use: Press space to swing the mace around you",
@@ -21,7 +22,7 @@
   },
   {
     "title": "Iron Axe",
-    "category": "Item",
+    "category": "Weapon",
     "content": [
       "Function: Harms and cuts down trees",
       "How to Use: Press space to swing axe",
@@ -240,7 +241,7 @@
   },
   {
     "title": "Crab",
-    "category": "item",
+    "category": "Item",
     "content": [
       "How to get: kill crab"
     ]
