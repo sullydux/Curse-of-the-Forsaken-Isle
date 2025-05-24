@@ -240,10 +240,9 @@
   },
   {
     "title": "Crab",
-    "category": "Food",
+    "category": "item",
     "content": [
-      "How to get: kill crab",
-      "Use: Just eat it"
+      "How to get: kill crab"
     ]
   },
   {
