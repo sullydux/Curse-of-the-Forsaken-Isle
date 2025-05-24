@@ -86,70 +86,86 @@
 
 This is still in develepment so not everything is in the wiki yet.
 
-<div class="header">
-  <input type="text" id="search" placeholder="Search items...">
-  <select id="search-type">
-    <option value="name">Name</option>
-    <option value="description">Description</option>
-  </select>
-  <select id="filter">
-    <option value="all">All Categories</option>
-    <option value="Item">Item</option>
-    <option value="Weapon">Weapon</option>
-    <option value="Function">Function</option>
-    <option value="NPC">NPC</option>
-    <option value="Animal">Animal</option>
-    <option value="Food">Food</option>
-    <option value="Tool">Tool</option>
-    <option value="Armor">Armor</option>
-  </select>
-</div>
+  <div class="header">
+    <input type="text" id="search" placeholder="Search items...">
+    <select id="filter">
+      <option value="all">All Categories</option>
+      <option value="Item">Item</option>
+      <option value="Weapon">Weapon</option>
+      <option value="Function">Function</option>
+      <option value="NPC">NPC</option>
+      <option value="Animal">Animal</option>
+      <option value="Food">Food</option>
+      <option value="Tool">Tool</option>
+      <option value="Armor">Armor</option>
+    </select>
+  </div>
 
-<div id="card-container"></div>
+  <div id="card-container"></div>
 
-<button id="top-button">Back to Top</button>
+  <button id="top-button">Back to Top</button>
 
-<script>
-  let items = [];
+  <script>
+    let items = [];
 
-  async function loadItems() {
-    const res = await fetch('Wiki.json');
-    items = await res.json();
-    items.sort((a, b) => a.title.localeCompare(b.title));
-    renderCards();
-  }
+    async function loadItems() {
+      const res = await fetch('Wiki.json');
+      items = await res.json();
+      items.sort((a, b) => a.title.localeCompare(b.title));
+      renderCards();
+    }
 
-  function renderCards() {
-    const container = document.getElementById('card-container');
-    const searchInput = document.getElementById('search').value.toLowerCase();
-    const searchType = document.getElementById('search-type').value;
-    const filterValue = document.getElementById('filter').value;
+    function renderCards() {
+      const container = document.getElementById('card-container');
+      container.innerHTML = '';
 
-    container.innerHTML = '';
-
-    items
-      .filter(({ title, description, category }) => {
-        const searchField = searchType === 'name' ? title : description;
-        const matchesSearch = searchField.toLowerCase().includes(searchInput);
-        const matchesCategory = filterValue === 'all' || category === filterValue;
-        return matchesSearch && matchesCategory;
-      })
-      .forEach(({ title, category, content }) => {
+      items.forEach(({ title, category, content }) => {
         const card = document.createElement('div');
         card.className = 'card';
-        card.innerHTML = `
-          <h3>${title}</h3>
-          <p>${content}</p>
-          <small>Category: ${category}</small>
-        `;
+        card.setAttribute('data-category', category);
+
+        const titleElement = document.createElement('h2');
+        titleElement.className = 'card-title';
+        titleElement.innerHTML = `${title}<span class="card-category">${category}</span>`;
+
+        const contentWrapper = document.createElement('div');
+        content.forEach(line => {
+          const p = document.createElement('p');
+          p.textContent = line;
+          contentWrapper.appendChild(p);
+        });
+
+        card.appendChild(titleElement);
+        card.appendChild(contentWrapper);
         container.appendChild(card);
       });
-  }
 
-  document.getElementById('search').addEventListener('input', renderCards);
-  document.getElementById('search-type').addEventListener('change', renderCards);
-  document.getElementById('filter').addEventListener('change', renderCards);
+      filterCards();
+    }
 
-  loadItems();
-</script>
-  </html>
+    const searchInput = document.getElementById('search');
+    const filterSelect = document.getElementById('filter');
+
+    function filterCards() {
+      const searchText = searchInput.value.toLowerCase();
+      const selectedCategory = filterSelect.value;
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const content = card.textContent.toLowerCase();
+        const category = card.getAttribute('data-category');
+        const matchesSearch = content.includes(searchText);
+        const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
+        card.classList.toggle('hidden', !(matchesSearch && matchesCategory));
+      });
+    }
+
+    searchInput.addEventListener('input', filterCards);
+    filterSelect.addEventListener('change', filterCards);
+
+    document.getElementById('top-button').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    loadItems();
+  </script></html>
