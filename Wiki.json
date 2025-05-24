@@ -146,6 +146,24 @@
       "Recipe: 3 wood and 2 sticks"
     ]
   },
+  {
+    "title": "Shovel",
+    "category": "Tool",
+    "content": [
+      "Function: Use it to harvest plants",
+      "How to Use: Press space to shovel",
+      "Recipe: 1 iron and 2 sticks"
+    ]
+  },
+  {
+    "title": "Bow",
+    "category": "Tool",
+    "content": [
+      "Function: Use it to shoot arrows",
+      "How to Use: click where you want to shoot",
+      "Recipe: 3 sticks and 3 string"
+    ]
+  },
 
 
   {
@@ -168,7 +186,8 @@
     "title": "Iron Ore",
     "category": "Item",
     "content": [
-      "How to find: Mine rocks with pickaxe"
+      "How to find: Mine rocks with pickaxe",
+      "Use: Smelt in furnace to get iron"
     ]
   },
   {
@@ -180,9 +199,105 @@
   },
   {
     "title": "Raw Bacon",
+    "category": "Food",
+    "content": [
+      "How to find: Kill pig",
+      "Use: Cook on fire to get bacon"
+    ]
+  },
+  {
+    "title": "Bacon",
+    "category": "Food",
+    "content": [
+      "How to get: cook raw bacon ",
+      "Use: Just eat it"
+    ]
+  },
+  {
+    "title": "Steak",
+    "category": "Food",
+    "content": [
+      "How to find: Kill cow",
+      "Use: Cook on fire to get cooked steak"
+    ]
+  },
+  {
+    "title": "Cooked Steak",
+    "category": "Food",
+    "content": [
+      "How to get: Cook steak",
+      "Use: Just eat it"
+    ]
+  },
+  {
+    "title": "Hydromelon",
+    "category": "Food",
+    "content": [
+      "How to get: harvest with shovel",
+      "How to find: they are in areas with extreme heat",
+      "Use: Eat it to get heat resistance"
+    ]
+  },
+  {
+    "title": "Crab",
+    "category": "Food",
+    "content": [
+      "How to get: kill crab",
+      "Use: Just eat it"
+    ]
+  },
+  {
+    "title": "Cooked Crab",
+    "category": "Food",
+    "content": [
+      "How to get: Cook crab",
+      "Use: Just eat it"
+    ]
+  },
+  {
+    "title": "Crab",
+    "category": "Animal",
+    "content": [
+      "How to find: they like to hang out on beachs"
+    ]
+  },
+  {
+    "title": "Bread",
+    "category": "Food",
+    "content": [
+      "How to get: combine 3 wheat",
+      "Use: Just eat it"
+    ]
+  },
+  {
+    "title": "Wheat",
     "category": "Item",
     "content": [
-      "How to find: Kill Pig"
+      "How to get: Harvest wheat plant in village"
+    ]
+  },
+  {
+    "title": "Seed",
+    "category": "Item",
+    "content": [
+      "How to get: Harvest wheat plant in village"
+    ]
+  },
+  {
+    "title": "Strawberries",
+    "category": "Food",
+    "content": [
+      "How to get: Harvest strawberry plant",
+      "Use: Just eat it"
+    ]
+  },
+  {
+    "title": "Chillshroom",
+    "category": "Food",
+    "content": [
+      "How to get: harvest with shovel",
+      "How to find: they are in areas with extreme cold",
+      "Use: Eat it to get heat resistance"
     ]
   }
 ]
