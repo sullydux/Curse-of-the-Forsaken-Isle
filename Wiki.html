@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Forsaken Isle Wiki</title>
+  <style>
+    :root {
+      --bg: #3c9141;
+      --text: #fff;
+      --card-bg: #2a5d2f;
+      --card-text: #fff;
+      --accent: #ffffff;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    #search {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 50%;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #filter {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      color: var(--card-text);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .card-title {
+      margin-top: 0;
+    }
+
+    .card-category {
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 5px;
+      padding: 0 6px;
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #top-button {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+This is still in develepment so not everything is in the wiki yet.
+
+  <div class="header">
+    <input type="text" id="search" placeholder="Search items...">
+    <select id="filter">
+      <option value="all">All Categories</option>
+      <option value="Item">Item</option>
+      <option value="Weapon">Weapon</option>
+      <option value="Function">Function</option>
+      <option value="Animal/NPC">Animal/NPC</option>
+    </select>
+  </div>
+
+  <div id="card-container"></div>
+
+  <button id="top-button">Back to Top</button>
+
+  <script>
+    let items = [];
+
+    async function loadItems() {
+      const res = await fetch('Wiki.json');
+      items = await res.json();
+      items.sort((a, b) => a.title.localeCompare(b.title));
+      renderCards();
+    }
+
+    function renderCards() {
+      const container = document.getElementById('card-container');
+      container.innerHTML = '';
+
+      items.forEach(({ title, category, content }) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.setAttribute('data-category', category);
+
+        const titleElement = document.createElement('h2');
+        titleElement.className = 'card-title';
+        titleElement.innerHTML = `${title}<span class="card-category">${category}</span>`;
+
+        const contentWrapper = document.createElement('div');
+        content.forEach(line => {
+          const p = document.createElement('p');
+          p.textContent = line;
+          contentWrapper.appendChild(p);
+        });
+
+        card.appendChild(titleElement);
+        card.appendChild(contentWrapper);
+        container.appendChild(card);
+      });
+
+      filterCards();
+    }
+
+    const searchInput = document.getElementById('search');
+    const filterSelect = document.getElementById('filter');
+
+    function filterCards() {
+      const searchText = searchInput.value.toLowerCase();
+      const selectedCategory = filterSelect.value;
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const content = card.textContent.toLowerCase();
+        const category = card.getAttribute('data-category');
+        const matchesSearch = content.includes(searchText);
+        const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
+        card.classList.toggle('hidden', !(matchesSearch && matchesCategory));
+      });
+    }
+
+    searchInput.addEventListener('input', filterCards);
+    filterSelect.addEventListener('change', filterCards);
+
+    document.getElementById('top-button').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    loadItems();
+  </script></html>

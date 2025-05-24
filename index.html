@@ -216,6 +216,23 @@
     }
   </script>
 
+
+<button class="stats-button" style="bottom: 60px;" onclick="toggleWiki()">Show Wiki</button>
+
+<iframe id="wiki-frame" src="Wiki.html" style="display: none; position: fixed; top: 50px; left: 50%; transform: translateX(-50%); width: 90%; height: 80%; border: 2px solid white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); z-index: 1000; background: white;"></iframe>
+
+<script>
+  let wikiVisible = false;
+
+  function toggleWiki() {
+    const wiki = document.getElementById("wiki-frame");
+    const button = event.target;
+    wikiVisible = !wikiVisible;
+    wiki.style.display = wikiVisible ? "block" : "none";
+    button.textContent = wikiVisible ? "Hide Wiki" : "Show Wiki";
+  }
+</script>
+
 </body>
 </html>
 

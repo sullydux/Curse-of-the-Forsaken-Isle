@@ -1,0 +1,188 @@
+[
+  {
+    "title": "Arrow",
+    "category": "Weapon",
+    "content": [
+      "Function: Shoot it at enemies with bow to deal damage",
+      "How to Use: Click where you want to shoot",
+      "Strength: 3/20",
+      "Recipe: 1 bone and 1 stick"
+    ]
+  },
+  {
+    "title": "Diamnond Mace",
+    "category": "Weapon",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to swing the mace around you",
+      "Strength: 17/20",
+      "Recipe: 3 iron and 2 sticks"
+    ]
+  },
+  {
+    "title": "Iron Axe",
+    "category": "Item",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to swing axe",
+      "Strength: 11/20",
+      "Recipe: 3 iron and 2 sticks"
+    ]
+  },
+  {
+    "title": "Iron Axe",
+    "category": "Weapon",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to swing axe",
+      "Strength: 11/20",
+      "Recipe: 3 iron and 2 sticks"
+    ]
+  },
+  {
+    "title": "Iron Pickaxe",
+    "category": "Weapon",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to swing pickaxe at a rock",
+      "Recipe: 3 iron and 2 sticks"
+    ]
+  },
+  {
+    "title": "Jade Knife",
+    "category": "Weapon",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to stab with knife",
+      "Strength: 2/20",
+      "Recipe: 500 Jade"
+    ]
+  },
+  {
+    "title": "Knife",
+    "category": "Weapon",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to stab with knife",
+      "Strength: 1/20",
+      "Recipe: 2 iron and 1 stick"
+    ]
+  },
+  {
+    "title": "Sharp Iron Axe",
+    "category": "Weapon",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to swing axe",
+      "Strength: 14/20",
+      "Recipe: Iron Axe and one bone"
+    ]
+  },
+  {
+    "title": "Sharp Stone Axe",
+    "category": "Weapon",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to swing axe",
+      "Strength: 11/20",
+      "Recipe: Stone Axe and one bone"
+    ]
+  },
+  {
+    "title": "Sharp Wood Axe",
+    "category": "Weapon",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to swing axe",
+      "Strength: 6/20",
+      "Recipe: Wood Axe and one bone"
+    ]
+  },
+  {
+    "title": "Spear",
+    "category": "Weapon",
+    "content": [
+      "Function: Shoot it at enemies to deal damage",
+      "How to Use: Click where you want to throw and it will boomerang there and back",
+      "Strength: 3/20",
+      "Recipe: 1 iron and 2 sticks"
+    ]
+  },
+  {
+    "title": "Stone Axe",
+    "category": "Weapon",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to swing axe",
+      "Strength: 6/20",
+      "Recipe: 3 stone and 2 sticks"
+    ]
+  },
+  {
+    "title": "Stone Pickaxe",
+    "category": "Weapon",
+    "content": [
+      "Function: Shoot it at enemies with bow to deal damage",
+      "How to Use: Press space to swing pickaxe at a rock",
+      "Recipe: 3 stone and 2 sticks"
+    ]
+  },
+  {
+    "title": "Wood Axe",
+    "category": "Weapon",
+    "content": [
+      "Function: Harms and cuts down trees",
+      "How to Use: Press space to swing axe",
+      "Strength: 3/20",
+      "Recipe: 3 wood and 2 sticks"
+    ]
+  },
+  {
+    "title": "Wood Pickaxe",
+    "category": "Weapon",
+    "content": [
+      "Function: Shoot it at enemies to deal damage",
+      "How to Use: Press space to swing pickaxe at a rock",
+      "Recipe: 3 wood and 2 sticks"
+    ]
+  },
+
+
+  {
+    "title": "Stick",
+    "category": "Item",
+    "content": [
+      "Recipe: Logs, or saplings",
+      "How to find: Chop down trees with axe"
+    ]
+  },
+  {
+    "title": "Log",
+    "category": "Item",
+    "content": [
+      "Recipe: 6 sticks",
+      "How to find: Chop down trees with axe"
+    ]
+  },
+  {
+    "title": "Iron Ore",
+    "category": "Item",
+    "content": [
+      "How to find: Mine rocks with pickaxe"
+    ]
+  },
+  {
+    "title": "Stone",
+    "category": "Item",
+    "content": [
+      "How to find: Mine rocks with pickaxe"
+    ]
+  },
+  {
+    "title": "Raw Bacon",
+    "category": "Item",
+    "content": [
+      "How to find: Kill Pig"
+    ]
+  }
+]
