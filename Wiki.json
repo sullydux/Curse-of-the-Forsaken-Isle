@@ -2,20 +2,21 @@
   {
     "title": "Arrow",
     "category": "Weapon",
+    "rarity": "common",
     "content": [
-      "Function: Shoot it at enemies with bow to deal damage",
-      "How to Use: Click where you want to shoot",
+      "Function: Shoot it at enemies with a bow to deal damage.",
+      "How to Use: Click where you want to shoot.",
       "Strength: 3/20",
       "Recipe: 1 bone and 1 stick"
     ]
   },
   {
-    "title": "Diamnond Mace",
+    "title": "Diamond Mace",
     "category": "Weapon",
     "rarity": "legendary",
     "content": [
       "Function: Harms and cuts down trees",
-      "How to Use: Press space to swing the mace around you",
+      "How to Use: Press space to swing the mace around you.",
       "Strength: 17/20",
       "Recipe: 3 iron and 2 sticks"
     ]
@@ -23,16 +24,7 @@
   {
     "title": "Iron Axe",
     "category": "Weapon",
-    "content": [
-      "Function: Harms and cuts down trees",
-      "How to Use: Press space to swing axe",
-      "Strength: 11/20",
-      "Recipe: 3 iron and 2 sticks"
-    ]
-  },
-  {
-    "title": "Iron Axe",
-    "category": "Weapon",
+    "rarity": "uncommon",
     "content": [
       "Function: Harms and cuts down trees",
       "How to Use: Press space to swing axe",
@@ -43,15 +35,17 @@
   {
     "title": "Iron Pickaxe",
     "category": "Weapon",
+    "rarity": "uncommon",
     "content": [
-      "Function: Harms and cuts down trees",
-      "How to Use: Press space to swing pickaxe at a rock",
+      "Function: Use it to break rocks.",
+      "How to Use: Press space to swing pickaxe at a rock.",
       "Recipe: 3 iron and 2 sticks"
     ]
   },
   {
     "title": "Jade Knife",
     "category": "Weapon",
+    "rarity": "rare",
     "content": [
       "Function: Harms and cuts down trees",
       "How to Use: Press space to stab with knife",
@@ -62,6 +56,7 @@
   {
     "title": "Knife",
     "category": "Weapon",
+    "rarity": "common",
     "content": [
       "Function: Harms and cuts down trees",
       "How to Use: Press space to stab with knife",
@@ -72,6 +67,7 @@
   {
     "title": "Sharp Iron Axe",
     "category": "Weapon",
+    "rarity": "uncommon",
     "content": [
       "Function: Harms and cuts down trees",
       "How to Use: Press space to swing axe",
@@ -82,6 +78,7 @@
   {
     "title": "Sharp Stone Axe",
     "category": "Weapon",
+    "rarity": "common",
     "content": [
       "Function: Harms and cuts down trees",
       "How to Use: Press space to swing axe",
@@ -92,6 +89,7 @@
   {
     "title": "Sharp Wood Axe",
     "category": "Weapon",
+    "rarity": "common",
     "content": [
       "Function: Harms and cuts down trees",
       "How to Use: Press space to swing axe",
@@ -102,9 +100,10 @@
   {
     "title": "Spear",
     "category": "Weapon",
+    "rarity": "common",
     "content": [
-      "Function: Shoot it at enemies to deal damage",
-      "How to Use: Click where you want to throw and it will boomerang there and back",
+      "Function: Shoot it at enemies to deal damage.",
+      "How to Use: Click where you want to throw and it will boomerang there and back.",
       "Strength: 3/20",
       "Recipe: 1 iron and 2 sticks"
     ]
@@ -112,25 +111,28 @@
   {
     "title": "Stone Axe",
     "category": "Weapon",
+    "rarity": "common",
     "content": [
       "Function: Harms and cuts down trees",
       "How to Use: Press space to swing axe",
       "Strength: 6/20",
-      "Recipe: 3 stone and 2 sticks"
+      "Recipe: 3 stones and 2 sticks"
     ]
   },
   {
     "title": "Stone Pickaxe",
     "category": "Weapon",
+    "rarity": "common",
     "content": [
-      "Function: Shoot it at enemies with bow to deal damage",
-      "How to Use: Press space to swing pickaxe at a rock",
-      "Recipe: 3 stone and 2 sticks"
+      "Function: Use it to break rocks.",
+      "How to Use: Press space to swing pickaxe at a rock.",
+      "Recipe: 3 stones and 2 sticks"
     ]
   },
   {
     "title": "Wood Axe",
     "category": "Weapon",
+    "rarity": "common",
     "content": [
       "Function: Harms and cuts down trees",
       "How to Use: Press space to swing axe",
@@ -141,17 +143,19 @@
   {
     "title": "Wood Pickaxe",
     "category": "Weapon",
+    "rarity": "common",
     "content": [
-      "Function: Shoot it at enemies to deal damage",
-      "How to Use: Press space to swing pickaxe at a rock",
+      "Function: Use it to break rocks.",
+      "How to Use: Press space to swing pickaxe at a rock.",
       "Recipe: 3 wood and 2 sticks"
     ]
   },
   {
     "title": "Shovel",
     "category": "Tool",
+    "rarity": "common",
     "content": [
-      "Function: Use it to harvest plants",
+      "Function: Use it to harvest plants.",
       "How to Use: Press space to shovel",
       "Recipe: 1 iron and 2 sticks"
     ]
@@ -159,89 +163,98 @@
   {
     "title": "Bow",
     "category": "Tool",
+    "rarity": "common",
     "content": [
-      "Function: Use it to shoot arrows",
+      "Function: Use it to shoot arrows.",
       "How to Use: click where you want to shoot",
-      "Recipe: 3 sticks and 3 string"
+      "Recipe: 3 sticks and 3 strings"
     ]
   },
-
-
   {
     "title": "Stick",
     "category": "Item",
+    "rarity": "common",
     "content": [
       "Recipe: Logs, or saplings",
-      "How to find: Chop down trees with axe"
+      "How to find: Chop down trees with an axe."
     ]
   },
   {
     "title": "Log",
     "category": "Item",
+    "rarity": "common",
     "content": [
       "Recipe: 6 sticks",
-      "How to find: Chop down trees with axe"
+      "How to find: Chop down trees with an axe."
     ]
   },
   {
     "title": "Iron Ore",
     "category": "Item",
+    "rarity": "common",
     "content": [
-      "How to find: Mine rocks with pickaxe",
+      "How to find: Mine rocks with a pickaxe",
       "Use: Smelt in furnace to get iron"
     ]
   },
   {
     "title": "Stone",
     "category": "Item",
+    "rarity": "common",
     "content": [
-      "How to find: Mine rocks with pickaxe"
+      "How to find: Mine rocks with a pickaxe"
     ]
   },
   {
     "title": "Raw Bacon",
     "category": "Food",
+    "rarity": "common",
     "content": [
       "How to find: Kill pig",
-      "Use: Cook on fire to get bacon"
+      "Use: Cook on fire to get bacon."
     ]
   },
   {
     "title": "Bacon",
     "category": "Food",
+    "rarity": "common",
     "content": [
       "How to get: cook raw bacon ",
-      "Use: Just eat it"
+      "Use: Just eat it."
     ]
   },
   {
     "title": "Steak",
     "category": "Food",
+    "rarity": "common",
     "content": [
-      "How to find: Kill cow",
-      "Use: Cook on fire to get cooked steak"
+      "How to find: Kill a cow",
+      "Use: Cook on fire to get a cooked steak."
     ]
   },
   {
     "title": "Cooked Steak",
     "category": "Food",
+    "rarity": "uncommon",
     "content": [
       "How to get: Cook steak",
-      "Use: Just eat it"
+      "Use: Just eat it."
     ]
   },
   {
     "title": "Hydromelon",
     "category": "Food",
+    "rarity": "uncommon",
     "content": [
       "How to get: harvest with shovel",
-      "How to find: they are in areas with extreme heat",
-      "Use: Eat it to get heat resistance"
+      "How to find: they are in areas with extreme heat.",
+      "Use: Eat it to get heat resistance."
     ]
   },
   {
     "title": "Crab",
     "category": "Item",
+    "rarity": "common",
     "content": [
       "How to get: kill crab"
     ]
@@ -249,68 +262,69 @@
   {
     "title": "Cooked Crab",
     "category": "Food",
+    "rarity": "common",
     "content": [
       "How to get: Cook crab",
-      "Use: Just eat it"
-    ]
-  },
-  {
-    "title": "Crab",
-    "category": "Animal",
-    "content": [
-      "How to find: they like to hang out on beachs"
+      "Use: Just eat it."
     ]
   },
   {
     "title": "Bread",
     "category": "Food",
+    "rarity": "common",
     "content": [
       "How to get: combine 3 wheat",
-      "Use: Just eat it"
+      "Use: Just eat it."
     ]
   },
   {
     "title": "Wheat",
     "category": "Item",
+    "rarity": "common",
     "content": [
-      "How to get: Harvest wheat plant in village"
+      "How to get: Harvest wheat plant in the village"
     ]
   },
   {
     "title": "Seed",
     "category": "Item",
+    "rarity": "common",
     "content": [
-      "How to get: Harvest wheat plant in village"
+      "How to get: Harvest wheat plant in the village"
     ]
   },
   {
     "title": "Strawberries",
     "category": "Food",
+    "rarity": "common",
     "content": [
-      "How to get: Harvest strawberry plant",
-      "Use: Just eat it"
+      "How to get: Harvest the strawberry plant",
+      "Use: Just eat it."
     ]
   },
   {
     "title": "Chillshroom",
     "category": "Food",
+    "rarity": "uncommon",
     "content": [
       "How to get: harvest with shovel",
       "How to find: they are in areas with extreme cold",
-      "Use: Eat it to get heat resistance"
+      "Use: Eat it to get heat resistance."
     ]
   },
   {
     "title": "Coal",
     "category": "Item",
+    "rarity": "common",
     "content": [
-      "How to find: Mine rocks with pickaxe",
+      "How to find: Mine rocks with a pickaxe",
       "Use: fuel for furnace, makes torches and campfire"
     ]
   },
   {
     "title": "Bone",
     "category": "Item",
+    "rarity": "common",
     "content": [
       "How to find: Kill goblins",
       "Use: weapon upgrades"
@@ -319,6 +333,7 @@
   {
     "title": "Iron",
     "category": "Item",
+    "rarity": "common",
     "content": [
       "How to get: smelt iron ore in furnace",
       "Use: makes weapons and tools"
@@ -327,6 +342,7 @@
   {
     "title": "String",
     "category": "Item",
+    "rarity": "common",
     "content": [
       "How to find: Kill spiders",
       "Use: make bow"
@@ -335,6 +351,7 @@
   {
     "title": "Torch",
     "category": "Item",
+    "rarity": "common",
     "content": [
       "Recipe: 2 sticks and 1 coal",
       "Use: lights up dark areas"
@@ -343,23 +360,26 @@
   {
     "title": "Furnace",
     "category": "Item",
+    "rarity": "common",
     "content": [
       "Recipe: 8 stone",
-      "How to use: click on it to open the furnace menu and the controls are on the menu",
+      "How to use: click on it to open the furnace menu, and the controls are on the men.u",
       "Use: smelts items and lights up dark areas"
     ]
   },
   {
     "title": "Portal",
     "category": "Item",
+    "rarity": "rare",
     "content": [
       "Recipe: 8 iron",
-      "Use: place it and enter it to teleport to a boss dimension"
+      "Use: place it and enter it to teleport to a boss dimension."
     ]
   },
   {
     "title": "Shield",
     "category": "Protection",
+    "rarity": "common",
     "content": [
       "Recipe: 1 iron and 6 logs",
       "Use: protect yourself from damage",
@@ -369,6 +389,7 @@
   {
     "title": "Iron Chestplate",
     "category": "Protection",
+    "rarity": "uncommon",
     "content": [
       "Recipe: 8 iron",
       "Use: protect yourself from damage",
@@ -378,6 +399,7 @@
   {
     "title": "Chainmail Vest",
     "category": "Protection",
+    "rarity": "common",
     "content": [
       "Recipe: 4 chains",
       "Use: protect yourself from damage",
@@ -387,6 +409,7 @@
   {
     "title": "Leather Coat",
     "category": "Protection",
+    "rarity": "common",
     "content": [
       "Recipe: 8 leather",
       "Use: protect yourself from damage",
@@ -396,6 +419,7 @@
   {
     "title": "Warm Chainmail Vest",
     "category": "Protection",
+    "rarity": "uncommon",
     "content": [
       "Recipe: 4 chains and 4 leather",
       "Use: protect yourself from damage",
@@ -403,12 +427,80 @@
     ]
   },
   {
-    "title": "Miners Helmet",
+    "title": "Miners Helment",
     "category": "Protection",
+    "rarity": "uncommon",
     "content": [
       "Recipe: 3 iron, 2 leather, and 1 coal",
       "Use: protect yourself from damage",
       "Protection: 3/16"
     ]
+  },
+  {
+    "title": "Leather",
+    "category": "Item",
+    "rarity": "common",
+    "content": [
+      "How to find: kill a cow",
+      "Use: warm armor"
+    ]
+  },
+  {
+    "title": "Chain",
+    "category": "Item",
+    "rarity": "common",
+    "content": [
+      "Recipe: 1 iron",
+      "Use: crafting"
+    ]
+  },
+  {
+    "title": "Chest",
+    "category": "Item",
+    "rarity": "common",
+    "content": [
+      "Recipe: 8 logs",
+      "How to use: click on it to open and press it again to take/put items in it. walk away to close it.",
+      "Use: storage"
+    ]
+  },
+  {
+    "title": "Campfire",
+    "category": "Item",
+    "rarity": "common",
+    "content": [
+      "Recipe: 1 coal and 3 logs",
+      "How to use: click on it with steak, raw bacon, or a crab to cook it. Click on it while holding nothing to skip to the next morning and set spawn.",
+      "Use: smelts items, lets you sleep, and lights up dark areas"
+    ]
+  },
+  {
+    "title": "Sapling",
+    "category": "Item",
+    "rarity": "common",
+    "content": [
+      "Variants: Pine(pine sapling) and oak(sapling)",
+      "How to use: press space with it to plant that kind of tree.",
+      "Use: replant tree, and craft into sticks"
+    ]
+  },
+  {
+    "title": "Sandworm Tooth",
+    "category": "Item",
+    "rarity": "legendary",
+    "content": [
+      "How to Find: Venture onto an isle of heat and sand, and kill the worm lurching there",
+      "Use: make a powerful weapon"
+    ]
+  },
+  {
+    "title": "Diamond",
+    "category": "Item",
+    "rarity": "legendary",
+    "content": [
+      "How to find: venture onto an isle of heat and sand, and break the rocks with a rare chance of finding it",
+      "Use: make a powerful weapon"
+    ]
   }
-]
+ ]
+ 
