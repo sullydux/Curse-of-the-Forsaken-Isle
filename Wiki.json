@@ -363,7 +363,8 @@
     "rarity": "common",
     "content": [
       "Recipe: 8 stone",
-      "How to use: click on it to open the furnace menu, and the controls are on the men.u",
+      "How to use: click on it to open the furnace menu, and the controls are on the menu.",
+      "How to place: walk to where you want it and press space, it will wait until you leave its area before placing.",
       "Use: smelts items and lights up dark areas"
     ]
   },
@@ -461,6 +462,7 @@
     "content": [
       "Recipe: 8 logs",
       "How to use: click on it to open and press it again to take/put items in it. walk away to close it.",
+      "How to place: walk to where you want it and press space, it will wait until you leave its area before placing.",
       "Use: storage"
     ]
   },
@@ -471,6 +473,7 @@
     "content": [
       "Recipe: 1 coal and 3 logs",
       "How to use: click on it with steak, raw bacon, or a crab to cook it. Click on it while holding nothing to skip to the next morning and set spawn.",
+      "How to place: walk to where you want it and press space, it will wait until you leave its area before placing.",
       "Use: smelts items, lets you sleep, and lights up dark areas"
     ]
   },
@@ -500,6 +503,16 @@
     "content": [
       "How to find: venture onto an isle of heat and sand, and break the rocks with a rare chance of finding it",
       "Use: make a powerful weapon"
+    ]
+  },
+  {
+    "title": "Jade",
+    "category": "Item",
+    "rarity": "Uncommon",
+    "content": [
+      "How to find: trade with the villagers in the village",
+      "Use: curency",
+      "Note: it only shows up in the village"
     ]
   }
  ]
