@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign In / Sign Up - The Forsaken Isle</title>
+  <style>
+    body {
+      background-color: #3c9141;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 2.4rem;
+      letter-spacing: 1.5px;
+      text-align: center;
+      user-select: none;
+    }
+    .tab-container {
+      display: flex;
+      background-color: #2a6b30;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+    .tab {
+      background-color: #256328;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 12px 30px;
+      font-size: 1rem;
+      transition: background-color 0.25s ease;
+      user-select: none;
+      flex: 1;
+      text-align: center;
+      font-weight: 600;
+    }
+    .tab:hover:not(.active) {
+      background-color: #1d4f22;
+    }
+    .tab.active {
+      background-color: #1d4f22;
+      font-weight: 700;
+      box-shadow: inset 0 -3px 0 0 #b1d88a;
+    }
+    .form-container {
+      background-color: #2a6b30;
+      padding: 25px 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+    }
+    input[type="text"], input[type="password"], input[type="email"] {
+      width: 100%;
+      padding: 14px 15px;
+      margin: 12px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+      background-color: #3c9141;
+      color: white;
+      font-weight: 500;
+      user-select: text;
+    }
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder,
+    input[type="email"]::placeholder {
+      color: #b5d29e;
+      font-style: italic;
+    }
+    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+      box-shadow: 0 0 8px 2px #b1d88a;
+      background-color: #337833;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #256328;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 18px;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    }
+    button:hover {
+      background-color: #1d4f22;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+
+still in testing
+
+  <h1>The Forsaken Isle</h1>
+  <div class="tab-container">
+    <button class="tab active" onclick="showForm('signup')">Sign Up</button>
+    <button class="tab" onclick="showForm('login')">Log In</button>
+  </div>
+
+  <div class="form-container">
+    <div id="signup-form">
+      <input type="text" id="signup-username" placeholder="Username" autocomplete="username" />
+      <input type="email" id="signup-email" placeholder="Email (optional)" autocomplete="email" />
+      <input type="password" id="signup-password" placeholder="Password" autocomplete="new-password" />
+      <button onclick="signUp()">Create Account</button>
+    </div>
+
+    <div id="login-form" style="display:none;">
+      <input type="text" id="login-username" placeholder="Username" autocomplete="username" />
+      <input type="password" id="login-password" placeholder="Password" autocomplete="current-password" />
+      <button onclick="logIn()">Log In</button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js';
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js';
+    import { getDatabase, ref, set, get, child } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCAyAkR2Vphi5ulTQRvOeKeUY3MqNDFfpA",
+      authDomain: "theforsakenfirebase.firebaseapp.com",
+      projectId: "theforsakenfirebase",
+      databaseURL: "https://theforsakenfirebase-default-rtdb.firebaseio.com",
+      storageBucket: "theforsakenfirebase.appspot.com",
+      messagingSenderId: "664820993042",
+      appId: "1:664820993042:web:30d0b074447e048c0c1ccb"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const db = getDatabase();
+
+    window.showForm = (form) => {
+      document.getElementById('signup-form').style.display = form === 'signup' ? 'block' : 'none';
+      document.getElementById('login-form').style.display = form === 'login' ? 'block' : 'none';
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab')[form === 'signup' ? 0 : 1].classList.add('active');
+    };
+
+    window.signUp = async () => {
+      const username = document.getElementById('signup-username').value.trim();
+      const emailInput = document.getElementById('signup-email').value.trim();
+      const password = document.getElementById('signup-password').value;
+
+      if (!username || !password) return alert('Username and password are required.');
+      const email = emailInput || `${username}@forsaken.com`;
+
+      try {
+        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        await set(ref(db, 'users/' + username), {
+          uid: cred.user.uid,
+          username: username,
+          email: email
+        });
+        localStorage.setItem('username', username);
+        alert('Signed up successfully!');
+      } catch (e) {
+        alert(e.message);
+      }
+    };
+
+    window.logIn = async () => {
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      if (!username || !password) return alert('Username and password are required.');
+
+      try {
+        const snapshot = await get(child(ref(db), 'users/' + username));
+        if (!snapshot.exists()) return alert('User not found.');
+
+        const email = snapshot.val().email;
+        await signInWithEmailAndPassword(auth, email, password);
+        localStorage.setItem('username', username);
+        alert('Logged in successfully!');
+      } catch (e) {
+        alert(e.message);
+      }
+    };
+  </script>
+</body>
+</html>
