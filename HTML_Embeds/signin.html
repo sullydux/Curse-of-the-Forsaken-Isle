@@ -9,11 +9,10 @@
       font-family: Arial, sans-serif;
       color: white;
       margin: 0;
-      padding: 0;
+      padding: 40px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
       min-height: 100vh;
       box-sizing: border-box;
     }
@@ -75,15 +74,12 @@
       background-color: #3c9141;
       color: white;
       font-weight: 500;
-      user-select: text;
     }
-    input[type="text"]::placeholder,
-    input[type="password"]::placeholder,
-    input[type="email"]::placeholder {
+    input::placeholder {
       color: #b5d29e;
       font-style: italic;
     }
-    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    input:focus {
       box-shadow: 0 0 8px 2px #b1d88a;
       background-color: #337833;
     }
@@ -99,7 +95,6 @@
       font-weight: 700;
       margin-top: 18px;
       transition: background-color 0.3s ease;
-      user-select: none;
       box-shadow: 0 3px 6px rgba(0,0,0,0.25);
     }
     button:hover {
@@ -109,9 +104,6 @@
   </style>
 </head>
 <body>
-
-still in testing
-
   <h1>The Forsaken Isle</h1>
   <div class="tab-container">
     <button class="tab active" onclick="showForm('signup')">Sign Up</button>
@@ -175,7 +167,7 @@ still in testing
           email: email
         });
         localStorage.setItem('username', username);
-        alert('Signed up successfully!');
+        window.location.href = 'dashboard.html';
       } catch (e) {
         alert(e.message);
       }
@@ -194,7 +186,7 @@ still in testing
         const email = snapshot.val().email;
         await signInWithEmailAndPassword(auth, email, password);
         localStorage.setItem('username', username);
-        alert('Logged in successfully!');
+        window.location.href = 'dashboard.html';
       } catch (e) {
         alert(e.message);
       }

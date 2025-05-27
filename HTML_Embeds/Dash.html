@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - The Forsaken Isle</title>
+  <style>
+    /* Existing styles — your style block is already well-structured */
+    body {
+      background-color: #3c9141;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .tab-bar {
+      display: flex;
+      background-color: #2a6b30;
+      padding: 12px 24px;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      max-width: 960px;
+      gap: 15px;
+      border-radius: 0 0 12px 12px;
+    }
+    .tab-bar button {
+      background-color: #256328;
+      color: #e3e8dc;
+      border: none;
+      padding: 12px 28px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+    .tab-bar button:hover,
+    .tab-bar button:focus {
+      background-color: #1d4f22;
+      transform: scale(1.05);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.35);
+    }
+    .tab-bar button.active {
+      background-color: #144715;
+      box-shadow: inset 0 -3px 8px rgba(255, 255, 255, 0.2);
+    }
+    .tab-content {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.25);
+      border-radius: 12px;
+      padding: 24px 30px;
+      margin: 30px auto;
+      width: 100%;
+      max-width: 960px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    }
+    .tab-content.active {
+      display: block;
+    }
+    h2 {
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #d9f0c7;
+      margin-bottom: 20px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+    #chat-box {
+      height: 200px;
+      overflow-y: auto;
+      background-color: #275b22;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      font-size: 15px;
+      line-height: 1.4;
+      box-shadow: inset 0 0 5px #1a3e13;
+      color: #d0f0a6;
+    }
+    #chat-input {
+      padding: 12px 15px;
+      font-size: 16px;
+      border-radius: 8px 0 0 8px;
+      border: none;
+      width: calc(100% - 100px);
+      max-width: 600px;
+      box-sizing: border-box;
+      outline: none;
+    }
+    #chat > button {
+      padding: 12px 25px;
+      font-weight: 600;
+      font-size: 16px;
+      border-radius: 0 8px 8px 0;
+      border: none;
+      background-color: #256328;
+      color: #e3e8dc;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    #chat > button:hover {
+      background-color: #1d4f22;
+    }
+    #shared-saves-list, #private-saves-list {
+      margin-top: 15px;
+      max-height: 300px;
+      overflow-y: auto;
+      background-color: #275b22;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 7px #1a3e13;
+      color: #d0f0a6;
+      font-size: 15px;
+    }
+    .tab-content button {
+      margin-right: 8px;
+      margin-top: 8px;
+      background-color: #256328;
+      color: #e3e8dc;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.25s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+    .tab-content button:hover {
+      background-color: #1d4f22;
+    }
+    .save-entry {
+      background-color: #2f7a36;
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .save-entry strong {
+      font-size: 1.1rem;
+      color: #d9f0c7;
+    }
+    .save-entry p {
+      margin: 10px 0 0 0;
+      font-size: 0.9rem;
+      color: #c5e8a8;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tab-bar">
+    <button class="active" onclick="showTab('chat', this)">Chat</button>
+    <button onclick="showTab('shared', this)">Shared Saves</button>
+    <button onclick="showTab('private', this)">Private Saves</button>
+  </div>
+
+  <div id="chat" class="tab-content active">
+    <h2>Chat</h2>
+    <div id="chat-box"></div>
+    <div style="display:flex; max-width: 620px;">
+      <input type="text" id="chat-input" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <div id="shared" class="tab-content">
+    <h2>Shared Saves</h2>
+<div>
+  <input type="text" id="shared-save-name" placeholder="Save name" />
+  <input type="text" id="shared-save-desc" placeholder="Description (optional)" />
+  <input type="text" id="shared-save-code" placeholder="Save code" />
+  <button onclick="createSave(true)">Save to Shared</button>
+</div>
+<div id="shared-saves-list"></div>
+  </div>
+
+  <div id="private" class="tab-content">
+    <h2>Private Saves</h2>
+<div>
+  <input type="text" id="private-save-name" placeholder="Save name" />
+  <input type="text" id="private-save-desc" placeholder="Description (optional)" />
+  <input type="text" id="private-save-code" placeholder="Save code" />
+  <button onclick="createSave(false)">Save to Private</button>
+</div>
+<div id="private-saves-list"></div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js';
+    import { getDatabase, ref, get, child } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCAyAkR2Vphi5ulTQRvOeKeUY3MqNDFfpA",
+      authDomain: "theforsakenfirebase.firebaseapp.com",
+      projectId: "theforsakenfirebase",
+      databaseURL: "https://theforsakenfirebase-default-rtdb.firebaseio.com",
+      storageBucket: "theforsakenfirebase.appspot.com",
+      messagingSenderId: "664820993042",
+      appId: "1:664820993042:web:30d0b074447e048c0c1ccb"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    const username = localStorage.getItem("username") || "Unknown";
+
+    document.getElementById("chat-box").innerText = `Welcome, ${username}!`;
+
+    window.showTab = (tabId, el) => {
+      document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
+      document.getElementById(tabId).classList.add("active");
+      document.querySelectorAll(".tab-bar button").forEach(btn => btn.classList.remove("active"));
+      el.classList.add("active");
+    };
+
+    window.sendMessage = () => {
+      const input = document.getElementById("chat-input");
+      const msg = input.value.trim();
+      if (msg) {
+        const box = document.getElementById("chat-box");
+        box.innerHTML += `<div><strong>${username}:</strong> ${msg}</div>`;
+        input.value = "";
+        box.scrollTop = box.scrollHeight;
+      }
+    };
+
+    const loadPrivateSaves = () => {
+      const localSaves = JSON.parse(localStorage.getItem("privateSaves") || "[]");
+      const container = document.getElementById("private-saves-list");
+      container.innerHTML = '';
+      localSaves.forEach(save => container.innerHTML += renderSave(save));
+    };
+
+    const loadSharedSaves = async () => {
+      const refPath = ref(db, "sharedSaves");
+      const snapshot = await get(refPath);
+      const container = document.getElementById("shared-saves-list");
+      container.innerHTML = '';
+      if (snapshot.exists()) {
+        Object.entries(snapshot.val()).forEach(([key, save]) => {
+          container.innerHTML += renderSave(save);
+        });
+      } else {
+        container.innerHTML = "<em>No shared saves yet.</em>";
+      }
+    };
+
+    const renderSave = (save) => `
+      <div class="save-entry">
+        <strong>${save.name || "Unnamed Save"}</strong>
+        <p style="display:none;">${save.description || "No description."}</p>
+        <button onclick="toggleDesc(this)">Show Description</button>
+        <button onclick="copyText(\`${save.description || ""}\`)">Copy Description</button>
+      </div>
+    `;
+
+    window.toggleDesc = (btn) => {
+      const p = btn.parentElement.querySelector("p");
+      const isVisible = p.style.display === "block";
+      p.style.display = isVisible ? "none" : "block";
+      btn.textContent = isVisible ? "Show Description" : "Hide Description";
+    };
+
+    window.copyText = (text) => {
+      navigator.clipboard.writeText(text).then(() => alert("Copied!"));
+    };
+
+    function createSave(isShared) {
+  const prefix = isShared ? "shared" : "private";
+  const name = document.getElementById(`${prefix}-save-name`).value.trim();
+  let description = document.getElementById(`${prefix}-save-desc`).value.trim();
+  const code = document.getElementById(`${prefix}-save-code`).value.trim();
+
+  if (!name || !code) {
+    alert("Please provide both a name and save code.");
+    return;
+  }
+
+  if (!description) {
+    description = `Description not given`;
+  }
+
+  const saveData = {
+    name,
+    description,
+    code,
+    user: username
+  };
+
+  if (isShared) {
+    const saveRef = ref(db, `sharedSaves/${code}`);
+    set(saveRef, saveData)
+      .then(() => {
+        alert("Shared save created!");
+        loadSharedSaves();
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Failed to create shared save.");
+      });
+  } else {
+    const current = JSON.parse(localStorage.getItem("privateSaves") || "[]");
+    current.push(saveData);
+    localStorage.setItem("privateSaves", JSON.stringify(current));
+    alert("Private save created!");
+    loadPrivateSaves();
+  }
+
+  // Clear input fields
+  document.getElementById(`${prefix}-save-name`).value = "";
+  document.getElementById(`${prefix}-save-desc`).value = "";
+  document.getElementById(`${prefix}-save-code`).value = "";
+}
+
+    // Initial load
+    loadPrivateSaves();
+    loadSharedSaves();
+  </script>
+
+</body>
+</html>
