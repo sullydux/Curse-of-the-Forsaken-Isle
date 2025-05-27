@@ -157,9 +157,9 @@
 
 <body>
   <div id="signin-banner" style="display:none; background:#b32d2d; color:#fff; width:100%; text-align:center; padding:18px 0; font-size:1.15rem; font-weight:600; letter-spacing:0.5px; position:fixed; top:0; left:0; z-index:1000;">
-    Please  to use these features.
+    Please sign in to use these features. 
   </div>
-  <div style="height:60px"></div> <!-- Spacer for fixed banner -->
+
 
 
   <div class="tab-bar">
@@ -330,10 +330,8 @@
     loadPrivateSaves();
     loadSharedSaves();
 
-// ...existing code...
-const username1 = localStorage.getItem("username") || "";
 
-if (!username1) {
+if (!username) {
   document.getElementById("signin-banner").style.display = "block";
   // Optionally, disable all interactive elements except the banner
   document.querySelectorAll("input, button").forEach(el => {
@@ -344,9 +342,6 @@ if (!username1) {
 } else {
   document.getElementById("signin-banner").style.display = "none";
 }
-// ...existing code...
-
-
   </script>
 
 </body>

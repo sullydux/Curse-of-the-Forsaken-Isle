@@ -514,6 +514,76 @@
       "Use: curency",
       "Note: it only shows up in the village"
     ]
+  },
+  {
+    "title": "Crab",
+    "category": "Animal",
+    "content": [
+      "Where they live: in sandy and wet places",
+      "Drops: Crab"
+    ]
+  },
+  {
+    "title": "Pig",
+    "category": "Animal",
+    "content": [
+      "Where they live: in a warm climate",
+      "Drops: raw bacon"
+    ]
+  },
+  {
+    "title": "Cow",
+    "category": "Animal",
+    "content": [
+      "Where they live: in a wam climate",
+      "Drops: steak and leather"
+    ]
+  },
+  {
+    "title": "Dwarves",
+    "category": "NPC",
+    "content": [
+      "Where they live: in villages",
+      "Use: trading",
+      "Note: these ones are villagers",
+      "Note: can only trade with them while their sleeping or talking(wont see) in the village square"
+    ]
+  },
+  {
+    "title": "Rock",
+    "category": "Resource",
+    "content": [
+      "How to find: usally in caves",
+      "Use: to find resources; stone, coal, iron, there are more very rare ones",
+      "How to break: use pickaxes"
+    ]
+  },
+  {
+    "title": "Tree",
+    "category": "Resource",
+    "content": [
+      "How to find: never in caves",
+      "Use: to find resources; stick, log, sapling",
+      "How to break: use axes"
+    ]
+  },
+  {
+    "title": "Save",
+    "category": "Mechanic",
+    "content": [
+      "Use: to save your game",
+      "How to save: go into inventory and press save button. Then press space to pick your save; put in the # on the left for any of the times. Then double click the code, copy it, and press space to leave",
+      "Note: the code is encoded into numbers so you cant edit it"
+    ]
+  },
+  {
+    "title": "Load",
+    "category": "Mechanic",
+    "content": [
+      "Use: to load a game sae",
+      "How to load: go into inventory and press load button, then paste your save there, and wait for it to start loading.",
+      "Note: if the code is incorrect; , it will lag game out"
+    ]
   }
  ]
  
