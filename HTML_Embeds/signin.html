@@ -186,11 +186,42 @@
         const email = snapshot.val().email;
         await signInWithEmailAndPassword(auth, email, password);
         localStorage.setItem('username', username);
+        alert('Logged in successfully!');
         window.location.href = 'dashboard.html';
       } catch (e) {
         alert(e.message);
       }
     };
   </script>
+
+
+  <div id="signout-btn" style="display:none; position:fixed; bottom:28px; right:32px; z-index:2000;">
+    <button style="background:#b32d2d; color:#fff; font-size:1.08rem; font-weight:700; border:none; border-radius:7px; padding:13px 28px; box-shadow:0 2px 8px rgba(0,0,0,0.25); cursor:pointer;" onclick="signOut()">Sign Out</button>
+  </div>
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js';
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut as fbSignOut } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js';
+    import { getDatabase, ref, set, get, child } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js';
+
+
+    if (localStorage.getItem('username')) {
+      document.getElementById('signout-btn').style.display = 'block';
+    }
+
+    window.showForm = (form) => {
+      document.getElementById('signup-form').style.display = form === 'signup' ? 'block' : 'none';
+      document.getElementById('login-form').style.display = form === 'login' ? 'block' : 'none';
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab')[form === 'signup' ? 0 : 1].classList.add('active');
+    };
+
+    window.signOut = () => {
+      localStorage.removeItem('username');
+      document.getElementById('signout-btn').style.display = 'none';
+      alert('Signed out! You are still registered, but your username is now cleared from this device.');
+    };
+  </script>
+
+
 </body>
 </html>
