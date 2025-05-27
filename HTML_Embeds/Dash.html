@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Dashboard - The Forsaken Isle</title>
   <style>
-    /* Existing styles — your style block is already well-structured */
+    /* Your CSS styles remain unchanged */
     body {
       background-color: #3c9141;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -154,13 +154,10 @@
   </style>
 </head>
 <body>
-
-<body>
   <div id="signin-banner" style="display:none; background:#b32d2d; color:#fff; width:100%; text-align:center; padding:18px 0; font-size:1.15rem; font-weight:600; letter-spacing:0.5px; position:fixed; top:0; left:0; z-index:1000;">
-    Please sign in to use these features. 
+    Please sign in to use these features.
   </div>
-
-
+  <div style="height:60px"></div>
 
   <div class="tab-bar">
     <button class="active" onclick="showTab('chat', this)">Chat</button>
@@ -179,29 +176,29 @@
 
   <div id="shared" class="tab-content">
     <h2>Shared Saves</h2>
-<div>
-  <input type="text" id="shared-save-name" placeholder="Save name" />
-  <input type="text" id="shared-save-desc" placeholder="Description (optional)" />
-  <input type="text" id="shared-save-code" placeholder="Save code" />
-  <button onclick="createSave(true)">Save to Shared</button>
-</div>
-<div id="shared-saves-list"></div>
+    <div>
+      <input type="text" id="shared-save-name" placeholder="Save name" />
+      <input type="text" id="shared-save-desc" placeholder="Description (optional)" />
+      <input type="text" id="shared-save-code" placeholder="Save code" />
+      <button onclick="createSave(true)">Save to Shared</button>
+    </div>
+    <div id="shared-saves-list"></div>
   </div>
 
   <div id="private" class="tab-content">
     <h2>Private Saves</h2>
-<div>
-  <input type="text" id="private-save-name" placeholder="Save name" />
-  <input type="text" id="private-save-desc" placeholder="Description (optional)" />
-  <input type="text" id="private-save-code" placeholder="Save code" />
-  <button onclick="createSave(false)">Save to Private</button>
-</div>
-<div id="private-saves-list"></div>
+    <div>
+      <input type="text" id="private-save-name" placeholder="Save name" />
+      <input type="text" id="private-save-desc" placeholder="Description (optional)" />
+      <input type="text" id="private-save-code" placeholder="Save code" />
+      <button onclick="createSave(false)">Save to Private</button>
+    </div>
+    <div id="private-saves-list"></div>
   </div>
 
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js';
-    import { getDatabase, ref, get, child } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js';
+    import { getDatabase, ref, get, set } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js';
 
     const firebaseConfig = {
       apiKey: "AIzaSyCAyAkR2Vphi5ulTQRvOeKeUY3MqNDFfpA",
@@ -216,9 +213,9 @@
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
 
-    const username = localStorage.getItem("username") || "Unknown";
+    const username = localStorage.getItem("username") || "";
 
-    document.getElementById("chat-box").innerText = `Welcome, ${username}!`;
+    document.getElementById("chat-box").innerText = username ? `Welcome, ${username}!` : "";
 
     window.showTab = (tabId, el) => {
       document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
@@ -280,69 +277,64 @@
     };
 
     function createSave(isShared) {
-  const prefix = isShared ? "shared" : "private";
-  const name = document.getElementById(`${prefix}-save-name`).value.trim();
-  let description = document.getElementById(`${prefix}-save-desc`).value.trim();
-  const code = document.getElementById(`${prefix}-save-code`).value.trim();
+      const prefix = isShared ? "shared" : "private";
+      const name = document.getElementById(`${prefix}-save-name`).value.trim();
+      let description = document.getElementById(`${prefix}-save-desc`).value.trim();
+      const code = document.getElementById(`${prefix}-save-code`).value.trim();
 
-  if (!name || !code) {
-    alert("Please provide both a name and save code.");
-    return;
-  }
+      if (!name || !code) {
+        alert("Please provide both a name and save code.");
+        return;
+      }
 
-  if (!description) {
-    description = `Description not given`;
-  }
+      if (!description) {
+        description = `Description not given`;
+      }
 
-  const saveData = {
-    name,
-    description,
-    code,
-    user: username
-  };
+      const saveData = {
+        name,
+        description,
+        code,
+        user: username
+      };
 
-  if (isShared) {
-    const saveRef = ref(db, `sharedSaves/${code}`);
-    set(saveRef, saveData)
-      .then(() => {
-        alert("Shared save created!");
-        loadSharedSaves();
-      })
-      .catch(err => {
-        console.error(err);
-        alert("Failed to create shared save.");
-      });
-  } else {
-    const current = JSON.parse(localStorage.getItem("privateSaves") || "[]");
-    current.push(saveData);
-    localStorage.setItem("privateSaves", JSON.stringify(current));
-    alert("Private save created!");
-    loadPrivateSaves();
-  }
+      if (isShared) {
+        const saveRef = ref(db, `sharedSaves/${code}`);
+        set(saveRef, saveData)
+          .then(() => {
+            alert("Shared save created!");
+            loadSharedSaves();
+          })
+          .catch(err => {
+            console.error(err);
+            alert("Failed to create shared save.");
+          });
+      } else {
+        const current = JSON.parse(localStorage.getItem("privateSaves") || "[]");
+        current.push(saveData);
+        localStorage.setItem("privateSaves", JSON.stringify(current));
+        alert("Private save created!");
+        loadPrivateSaves();
+      }
 
-  // Clear input fields
-  document.getElementById(`${prefix}-save-name`).value = "";
-  document.getElementById(`${prefix}-save-desc`).value = "";
-  document.getElementById(`${prefix}-save-code`).value = "";
-}
+      document.getElementById(`${prefix}-save-name`).value = "";
+      document.getElementById(`${prefix}-save-desc`).value = "";
+      document.getElementById(`${prefix}-save-code`).value = "";
+    }
 
-    // Initial load
     loadPrivateSaves();
     loadSharedSaves();
 
-
-if (!username) {
-  document.getElementById("signin-banner").style.display = "block";
-  // Optionally, disable all interactive elements except the banner
-  document.querySelectorAll("input, button").forEach(el => {
-    el.disabled = true;
-    el.style.opacity = 0.6;
-    el.style.pointerEvents = "none";
-  });
-} else {
-  document.getElementById("signin-banner").style.display = "none";
-}
+    if (!username) {
+      document.getElementById("signin-banner").style.display = "block";
+      document.querySelectorAll("input, button").forEach(el => {
+        el.disabled = true;
+        el.style.opacity = 0.6;
+        el.style.pointerEvents = "none";
+      });
+    } else {
+      document.getElementById("signin-banner").style.display = "none";
+    }
   </script>
-
 </body>
 </html>

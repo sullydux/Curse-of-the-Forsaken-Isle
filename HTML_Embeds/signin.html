@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Sign In / Sign Up - The Forsaken Isle</title>
   <style>
-    /* [styles unchanged] */
     body {
       background-color: #3c9141;
       font-family: Arial, sans-serif;
@@ -111,23 +110,22 @@
     <button class="tab" onclick="showForm('login')">Log In</button>
   </div>
 
-<div id="banner" style="
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #2a6b30;
-  color: white;
-  padding: 16px 28px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  z-index: 9999;
-  transition: top 0.5s ease, background-color 0.3s ease;
-"></div>
-
+  <div id="banner" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2a6b30;
+    color: white;
+    padding: 16px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: top 0.5s ease, background-color 0.3s ease;
+  "></div>
 
   <div class="form-container">
     <div id="signup-form">
@@ -148,13 +146,11 @@
     <button style="background:#b32d2d; color:#fff; font-size:1.08rem; font-weight:700; border:none; border-radius:7px; padding:13px 28px; box-shadow:0 2px 8px rgba(0,0,0,0.25); cursor:pointer;" onclick="signOut()">Sign Out</button>
   </div>
 
-  <!-- Firebase Logic -->
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js';
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut as fbSignOut } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js';
     import { getDatabase, ref, set, get, child } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js';
 
-    // ✅ Firebase Config
     const firebaseConfig = {
       apiKey: "AIzaSyCAyAkR2Vphi5ulTQRvOeKeUY3MqNDFfpA",
       authDomain: "theforsakenfirebase.firebaseapp.com",
@@ -169,7 +165,6 @@
     const auth = getAuth(app);
     const db = getDatabase(app);
 
-    // ✅ UI Logic
     window.showForm = (form) => {
       document.getElementById('signup-form').style.display = form === 'signup' ? 'block' : 'none';
       document.getElementById('login-form').style.display = form === 'login' ? 'block' : 'none';
@@ -182,7 +177,9 @@
       const emailInput = document.getElementById('signup-email').value.trim();
       const password = document.getElementById('signup-password').value;
       if (!username || !password) return alert('Username and password are required.');
-      const email = emailInput || `${username}@forsaken.com`;
+
+      // Email fallback logic remains tight here
+      const email = emailInput ? emailInput : `${username}@forsaken.com`;
 
       try {
         const cred = await createUserWithEmailAndPassword(auth, email, password);
@@ -192,6 +189,8 @@
           email
         });
         localStorage.setItem('username', username);
+        showBanner('Account created successfully!', true);
+        document.getElementById('signout-btn').style.display = 'block';
       } catch (e) {
         showBanner(e.message, false);
       }
@@ -209,11 +208,10 @@
         await signInWithEmailAndPassword(auth, email, password);
         localStorage.setItem('username', username);
         showBanner('Logged in successfully!', true);
+        document.getElementById('signout-btn').style.display = 'block';
       } catch (e) {
         showBanner(e.message, false);
       }
-      console.log(localStorage.getItem("username"));
-      
     };
 
     window.signOut = () => {
@@ -223,32 +221,37 @@
       showBanner('Signed out successfully. See you soon!', true);
     };
 
-    // Auto-show sign-out button if logged in
     if (localStorage.getItem('username')) {
       document.getElementById('signout-btn').style.display = 'block';
     }
   </script>
 
-<script>
-  function showBanner(message, isSuccess = true) {
-    const banner = document.getElementById('banner');
-    banner.textContent = message;
-    banner.style.backgroundColor = isSuccess ? '#4caf50' : '#d32f2f'; // green or red
-    banner.style.display = 'block';
-    banner.style.top = '0px';
+  <script>
+    function showBanner(message, isSuccess = true) {
+      const banner = document.getElementById('banner');
+      banner.textContent = message;
+      banner.style.backgroundColor = isSuccess ? '#4caf50' : '#d32f2f';
+      banner.style.display = 'block';
+      banner.style.top = '0px';
 
-    setTimeout(() => {
-      banner.style.top = '-100px'; // animate away
       setTimeout(() => {
-        banner.style.display = 'none';
-      }, 500); // match transition duration
-    }, 4000); // visible duration
-  }
+        banner.style.top = '-100px';
+        setTimeout(() => {
+          banner.style.display = 'none';
+        }, 500);
+      }, 4000);
+    }
 
+    // 🔁 Log username once at load and every 5 minutes
+    function logUsername() {
+      const username = localStorage.getItem('username');
+      if (username) {
+        console.log(`[${new Date().toLocaleTimeString()}] Logged in as: ${username}`);
+      }
+    }
 
-
-</script>
-
-
+    logUsername(); // Log once on page load
+    setInterval(logUsername, 5 * 60 * 1000); // Then every 5 minutes
+  </script>
 </body>
 </html>
