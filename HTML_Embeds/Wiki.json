@@ -580,9 +580,9 @@
     "title": "Load",
     "category": "Mechanic",
     "content": [
-      "Use: to load a game sae",
+      "Use: to load a game save",
       "How to load: go into inventory and press load button, then paste your save there, and wait for it to start loading.",
-      "Note: if the code is incorrect; , it will lag game out"
+      "Note: if the code is incorrect; not a valid, not game given code, it will lag game out."
     ]
   }
  ]
