@@ -197,6 +197,22 @@
     const auth = getAuth(app);
     const db = getDatabase(app);
 
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js';
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // user is signed in
+    const username = localStorage.getItem('username') || 'Unknown';
+    document.getElementById('signout-btn').style.display = 'flex';
+    document.getElementById('usernameDisplay').textContent = `Signed in as ${username}`;
+  } else {
+    // user is signed out
+    localStorage.removeItem('username');
+    document.getElementById('signout-btn').style.display = 'none';
+  }
+});
+
+
     window.showForm = (form) => {
       document.getElementById('signup-form').style.display = form === 'signup' ? 'block' : 'none';
       document.getElementById('login-form').style.display = form === 'login' ? 'block' : 'none';
@@ -255,11 +271,7 @@
       showBanner('Signed out successfully. See you soon!', true);
     };
 
-    const existingUser = localStorage.getItem('username');
-    if (existingUser) {
-       document.getElementById('signout-btn').style.display = 'flex';
-       document.getElementById('usernameDisplay').textContent = `Signed in as ${existingUser}`;
-}
+
   </script>
 
   <script>
