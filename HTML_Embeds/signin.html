@@ -151,9 +151,32 @@
     </div>
   </div>
 
-  <div id="signout-btn" style="display:none; position:fixed; bottom:28px; right:32px; z-index:2000;">
-    <button style="background:#b32d2d; color:#fff; font-size:1.08rem; font-weight:700; border:none; border-radius:7px; padding:13px 28px; box-shadow:0 2px 8px rgba(0,0,0,0.25); cursor:pointer;" onclick="signOut()">Sign Out</button>
-  </div>
+  <div id="signout-btn" style="display:none; position:fixed; bottom:28px; right:32px; z-index:2000; display: flex; align-items: center; gap: 12px;">
+  <span id="usernameDisplay" style="
+  background-color: #2a6b30;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  color: white;
+  line-height: 1.3;
+  user-select: none;
+  display: inline-block;
+  white-space: nowrap;
+">Signed in as sully</span>
+  <button style="
+    background:#b32d2d;
+    color:#fff;
+    font-size:1.08rem;
+    font-weight:700;
+    border:none;
+    border-radius:7px;
+    padding:13px 28px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.25);
+    cursor:pointer;
+  " onclick="signOut()">Sign Out</button>
+</div>
 
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js';
@@ -199,7 +222,8 @@
         });
         localStorage.setItem('username', username);
         showBanner('Account created successfully!', true);
-        document.getElementById('signout-btn').style.display = 'block';
+        document.getElementById('signout-btn').style.display = 'flex';
+  document.getElementById('usernameDisplay').textContent = `Signed in as ${username}`;
       } catch (e) {
         showBanner(e.message, false);
       }
@@ -217,7 +241,8 @@
         await signInWithEmailAndPassword(auth, email, password);
         localStorage.setItem('username', username);
         showBanner('Logged in successfully!', true);
-        document.getElementById('signout-btn').style.display = 'block';
+        document.getElementById('signout-btn').style.display = 'flex';
+        document.getElementById('usernameDisplay').textContent = `Signed in as ${username}`;
       } catch (e) {
         showBanner(e.message, false);
       }
@@ -230,9 +255,11 @@
       showBanner('Signed out successfully. See you soon!', true);
     };
 
-    if (localStorage.getItem('username')) {
-      document.getElementById('signout-btn').style.display = 'block';
-    }
+    const existingUser = localStorage.getItem('username');
+    if (existingUser) {
+       document.getElementById('signout-btn').style.display = 'flex';
+       document.getElementById('usernameDisplay').textContent = `Signed in as ${existingUser}`;
+}
   </script>
 
   <script>
