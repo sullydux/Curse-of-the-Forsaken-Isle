@@ -584,6 +584,97 @@
       "How to load: go into inventory and press load button, then paste your save there, and wait for it to start loading.",
       "Note: if the code is incorrect; not a valid, not game given code, it will lag game out."
     ]
+  },
+  {
+    "title": "Craft",
+    "category": "Mechanic",
+    "content": [
+      "Use: to make new tools and materials",
+      "How to craft: Go into inventory and scroll through the crafting list. Once you find the item you want to craft hit the anvil button and type in the number of what you want to craft",
+      "If not there: if theres a list called Unlocked Recipies hit the hammer button and it will swap."
+    ]
+  },
+  {
+    "title": "Respawn",
+    "category": "Mechanic",
+    "content": [
+      "How to set: sleep by campfire, distroy campfire to set spawn to default",
+      "Default: at the place where you spawn into the game",
+      "Use: if you die you spawn closer to a spot you want"
+    ]
+  },
+  {
+    "title": "Inventory",
+    "category": "Mechanic",
+    "content": [
+      "Use: store items",
+      "How to move items: if in the main area press 1, 2, or 3 to move the item your mouse is over to that slot, press 5 to equip that item(certian ones). if not in the main inventory area press 4 to move to main area",
+      "Use of hotbar: when out of inventory click or press 1, 2, or 3 to change current item. the current item is the item you are currently using.",
+      "Navigation: scroll to see all of main inventory area",
+      "Note: there is no limit on items in any way."
+    ]
+  },
+  {
+    "title": "Spider",
+    "category": "Monster",
+    "content": [
+      "How to find: in caves",
+      "How to kill: hit with wepaon",
+      "Drops: string"
+    ]
+  },
+  {
+    "title": "Goblin",
+    "category": "Monster",
+    "content": [
+      "How to find: in caves or on land at night",
+      "How to kill: hit with wepaon",
+      "Drops: bone"
+    ]
+  },
+  {
+    "title": "Marbled Gomma",
+    "category": "Boss",
+    "content": [
+      "How to find: in a boss dimension",
+      "How to kill: hit with wepaon",
+      "Drops: nothing"
+    ]
+  },
+  {
+    "title": "Sandworm",
+    "category": "Boss",
+    "content": [
+      "How to find: desert, and it will find you first",
+      "How to kill: hit with wepaon",
+      "Drops: 3 sandworm teeth"
+    ]
+  },
+  {
+    "title": "Walk",
+    "category": "Mechanic",
+    "content": [
+      "Use: to move",
+      "How to walk: WASD or arrow keys"
+    ]
+  },
+  {
+    "title": "Eat",
+    "category": "Mechanic",
+    "content": [
+      "Use: not starve",
+      "How to eat: hold food and press space to eat.",
+      "Note: scroll through food catagorie to see if its a food, some look like they could be but arn't."
+    ]
+  },
+  {
+    "title": "View",
+    "category": "Mechanic",
+    "content": [
+      "Note: it shows one peace of the map at a time",
+      "Note: the zoom could change",
+      "Note: change map by trying to go into a side"
+    ]
   }
  ]
  
