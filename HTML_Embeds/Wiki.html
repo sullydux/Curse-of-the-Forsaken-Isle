@@ -110,6 +110,18 @@
       border-radius: 8px;
       cursor: pointer;
     }
+    #home-button {
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+}
   </style>
 </head>
 <body>
@@ -134,6 +146,7 @@
   <div id="card-container"></div>
 
   <button id="top-button">Back to Top</button>
+  <button id="home-button" class="hidden">Back to Game</button>
 
   <script>
     let items = [];
@@ -212,6 +225,20 @@
     document.getElementById('top-button').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+const homeButton = document.getElementById('home-button');
+const currentURL = window.location.href;
+
+if (
+  currentURL === "https://sullydux.github.io/The-Forsaken-Isle/HTML_Embeds/Wiki.html" ||
+  currentURL === "file:///Users/sullydux/Desktop/coding/GitHub/The-Forsaken-Isle/HTML_Embeds/Wiki.html"
+) {
+  homeButton.classList.remove('hidden');
+  homeButton.addEventListener('click', () => {
+    window.location.href = "https://sullydux.github.io/The-Forsaken-Isle/";
+  });
+}
+
 
     loadItems();
   </script>
