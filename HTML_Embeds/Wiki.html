@@ -111,17 +111,17 @@
       cursor: pointer;
     }
     #home-button {
-  position: fixed;
-  bottom: 60px;
-  right: 10px;
-  background: var(--accent);
-  color: var(--bg);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  z-index: 1000;
-}
+      position: fixed;
+      bottom: 60px;
+      right: 10px;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1000;
+      }
   </style>
 </head>
 <body>
@@ -228,14 +228,20 @@
 
 const homeButton = document.getElementById('home-button');
 const currentURL = window.location.href;
+const isInIframe = window !== window.parent;
 
-if (
-  currentURL === "https://sullydux.github.io/The-Forsaken-Isle/HTML_Embeds/Wiki.html" ||
-  currentURL === "file:///Users/sullydux/Desktop/coding/GitHub/The-Forsaken-Isle/HTML_Embeds/Wiki.html"
-) {
+const isLocal = currentURL === "file:///Users/sullydux/Desktop/coding/GitHub/The-Forsaken-Isle/HTML_Embeds/Wiki.html";
+const isWeb = currentURL === "https://sullydux.github.io/The-Forsaken-Isle/HTML_Embeds/Wiki.html";
+
+if (!isInIframe && (isLocal || isWeb)) {
   homeButton.classList.remove('hidden');
+
   homeButton.addEventListener('click', () => {
-    window.location.href = "https://sullydux.github.io/The-Forsaken-Isle/";
+    if (isLocal) {
+      window.location.href = "file:///Users/sullydux/Desktop/coding/GitHub/The-Forsaken-Isle/index.html";
+    } else {
+      window.location.href = "https://sullydux.github.io/The-Forsaken-Isle/";
+    }
   });
 }
 
