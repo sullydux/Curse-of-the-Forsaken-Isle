@@ -170,7 +170,7 @@
 </head>
 <body>
   <div id="signin-banner">Please sign in to use these features.</div>
-  <div style="height:60px"></div>
+<div id="banner-gap" style="height:60px;"></div>
 
   <div class="tab-bar">
     <button class="active" onclick="showTab('chat', this)">Chat</button>
@@ -239,6 +239,7 @@
     const privateSavesList = document.getElementById("private-saves-list");
 
     const signinBanner = document.getElementById("signin-banner");
+    const bannerGap = document.getElementById("banner-gap");
 
     // Variables
     let username = "";
@@ -442,6 +443,7 @@
         username = user.displayName || user.email.split("@")[0];
         userUID = user.uid;
         signinBanner.style.display = "none";
+        bannerGap.style.display = "none";
 
         // Setup listeners
         setupChatListener();
@@ -457,6 +459,7 @@
         username = "";
         userUID = null;
         signinBanner.style.display = "block";
+        bannerGap.style.display = "block";
 
         chatBox.innerHTML = "<em>Sign in to see chat.</em>";
         sharedSavesList.innerHTML = "<em>Sign in to see shared saves.</em>";
