@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>The Forsaken Isle Wiki</title>
+  <link rel="icon" href="New Icon.png" type="image/png">
   <style>
     :root {
       --bg: #3c9141;
@@ -230,8 +231,8 @@ const homeButton = document.getElementById('home-button');
 const currentURL = window.location.href;
 const isInIframe = window !== window.parent;
 
-const isLocal = currentURL === "file:///Users/sullydux/Desktop/coding/GitHub/The-Forsaken-Isle/HTML_Embeds/Wiki.html";
-const isWeb = currentURL === "https://sullydux.github.io/The-Forsaken-Isle/HTML_Embeds/Wiki.html";
+const isLocal = currentURL === "file:///Users/sullydux/Desktop/coding/GitHub/The-Forsaken-Isle/Wiki/index.html";
+const isWeb = currentURL === "https://sullydux.github.io/The-Forsaken-Isle/Wiki/";
 
 if (!isInIframe && (isLocal || isWeb)) {
   homeButton.classList.remove('hidden');
