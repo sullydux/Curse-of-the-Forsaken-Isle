@@ -37,20 +37,6 @@
       border: none;
     }
 
-    #saveCodeInput {
-      padding: 0.5rem;
-      font-size: 1rem;
-      width: 300px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    .save-code-group {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-    }
-
     #filter {
       padding: 0.5rem;
       font-size: 1rem;
@@ -142,10 +128,6 @@
 <body>
   <div class="header">
     <input type="text" id="search" placeholder="Search items, tags, or descriptions...">
-    <div class="save-code-group">
-      <input type="text" id="saveCodeInput" placeholder="Enter your save code(Optional)...">
-      <button onclick="submitSaveCode()" id="saveCodeButton" style="padding: 0.3rem;">Analyze Save</button>
-    </div>
     <select id="filter">
       <option value="all">All Categories</option>
       <option value="Item">Item</option>
@@ -264,76 +246,6 @@ if (!isInIframe && (isLocal || isWeb)) {
     }
   });
 }
-
-function submitSaveCode() {
-  const code = document.getElementById("saveCodeInput").value;
-
-  fetch("http://localhost:5000/analyze", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ code })
-  })
-  .then(res => res.json())
-  .then(data => {
-    const unlocked = data.unlocked; // e.g., { "Lep": "1", ... }
-
-    // Show all cards, but filter those with Found property
-    const filtered = items.filter(item => {
-      if (Array.isArray(item.Found)) {
-        // Only show if unlocked[item.Found[1]] === item.Found[0]
-        return unlocked[item.Found[1]] === item.Found[0];
-      }
-      // Show all items without Found property
-      return true;
-    });
-
-    renderFilteredCards(filtered);
-  })
-  .catch(err => console.error("Error:", err));
-}
-
-function renderFilteredCards(filteredItems) {
-  const container = document.getElementById('card-container');
-  container.innerHTML = '';
-
-  filteredItems.forEach(({ title, category, content, rarity }) => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.setAttribute('data-category', category);
-
-    const titleElement = document.createElement('h2');
-    titleElement.className = 'card-title';
-    titleElement.textContent = title;
-
-    const categoryBadge = document.createElement('span');
-    categoryBadge.className = 'card-category';
-    categoryBadge.textContent = category;
-    titleElement.appendChild(categoryBadge);
-
-    const allowedRarities = ['common', 'uncommon', 'rare', 'legendary'];
-    const rarityClean = rarity?.trim().toLowerCase();
-    if (allowedRarities.includes(rarityClean)) {
-      const rarityBadge = document.createElement('span');
-      rarityBadge.className = `card-rarity rarity-${rarityClean}`;
-      rarityBadge.textContent = rarityClean.charAt(0).toUpperCase() + rarityClean.slice(1);
-      titleElement.appendChild(rarityBadge);
-    }
-
-    const contentWrapper = document.createElement('div');
-    content.forEach(line => {
-      const p = document.createElement('p');
-      p.textContent = line;
-      contentWrapper.appendChild(p);
-    });
-
-    card.appendChild(titleElement);
-    card.appendChild(contentWrapper);
-    container.appendChild(card);
-  });
-}
-
 
     loadItems();
   </script>
