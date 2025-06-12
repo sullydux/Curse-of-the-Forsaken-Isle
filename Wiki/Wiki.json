@@ -675,6 +675,16 @@
       "Note: the zoom could change",
       "Note: change map by trying to go into a side"
     ]
+  },
+  {
+    "title": "Leperchaun",
+    "category": "NPC",
+    "Found": ["A", "Lep"],
+    "content": [
+      "Note: it shows one peace of the map at a time",
+      "Note: the zoom could change",
+      "Note: change map by trying to go into a side"
+    ]
   }
  ]
  
