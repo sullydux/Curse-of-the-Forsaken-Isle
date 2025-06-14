@@ -675,6 +675,16 @@
       "Note: the zoom could change",
       "Note: change map by trying to go into a side"
     ]
+  },
+  {
+    "title": "Light",
+    "category": "Mechanic",
+    "content": [
+      "Time: there is a day and night cycle it lasts 17 minutes for a full cycle",
+      "Light Sources: torches, lit furnaces, and campfires",
+      "Warning: goblins like to spawn in dark areas",
+      "Note: You can carry a torch in your hand and it will light up a small area around you"
+    ]
   }
  ]
  
