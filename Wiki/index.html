@@ -245,16 +245,20 @@ const currentURL = window.location.href;
 const isInIframe = window !== window.parent;
 
 const isLocal = currentURL === "file:///Users/sullydux/Desktop/coding/GitHub/The-Forsaken-Isle/Wiki/index.html";
-const isWeb = currentURL === "https://sullydux.github.io/The-Forsaken-Isle/Wiki/";
+const isWeb = currentURL === "https://sullydux.github.io/Curse-of-the-Forsaken-Isle/Wiki/";
+
+console.log(isInIframe);
+console.log(isLocal);
+console.log(currentURL);
+console.log(isWeb);
 
 if (!isInIframe && (isLocal || isWeb)) {
   homeButton.classList.remove('hidden');
-
   homeButton.addEventListener('click', () => {
     if (isLocal) {
       window.location.href = "file:///Users/sullydux/Desktop/coding/GitHub/The-Forsaken-Isle/index.html";
     } else {
-      window.location.href = "https://sullydux.github.io/The-Forsaken-Isle/";
+      window.location.href = "https://sullydux.github.io/Curse-of-the-Forsaken-Isle/Wiki/";
     }
   });
 }
