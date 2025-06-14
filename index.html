@@ -199,31 +199,6 @@
     </footer>
   </div>
 
-  <button class="stats-button" onclick="checkPassword()">Game Stats</button>
-
-  <script>
-    function checkPassword() {
-      if (localStorage.getItem("authOK") === "true") {
-        openAnalytics();
-        return;
-      }
-
-//the password is Dwarven Axe
-
-      const input = prompt("Enter password:");
-      if (input === "Dwarven Axe") {
-        localStorage.setItem("authOK", "true");
-        openAnalytics();
-      } else {
-        alert("Incorrect password.");
-      }
-
-      function openAnalytics() {
-        window.open("https://analytics.google.com/analytics/web/#/p489780454/reports/intelligenthome?params=_u..nav%3Dmaui", "_blank");
-      }
-    }
-  </script>
-
 
 <button class="stats-button" style="bottom: 60px;" onclick="toggleWiki()">Show Wiki</button>
 
