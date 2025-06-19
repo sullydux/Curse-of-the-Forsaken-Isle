@@ -248,6 +248,23 @@
   });
 </script>
 
+<button id="toggle-notes" style="position: fixed; bottom: 15px; left: 15px; padding: 10px 14px; background-color: rgba(0, 0, 0, 0.7); color: white; border: none; border-radius: 8px; font-size: 0.9em; cursor: pointer; z-index: 1000; box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: background-color 0.3s ease, transform 0.2s ease;">
+  Show Notes
+</button>
+
+<iframe id="notes-frame" src="notes.html" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; border: 2px solid white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); background: white; z-index: 1000;"></iframe>
+
+<script>
+  const notesBtn = document.getElementById('toggle-notes');
+  const notesFrame = document.getElementById('notes-frame');
+
+  notesBtn.addEventListener('click', () => {
+    const visible = notesFrame.style.display === 'block';
+    notesFrame.style.display = visible ? 'none' : 'block';
+    notesBtn.textContent = visible ? 'Show Notes' : 'Hide Notes';
+  });
+</script>
+
 </body>
 </html>
 
