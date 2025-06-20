@@ -1,4 +1,4 @@
-# 🎵 Music Credits
+# Music Credits
 
 This project includes music tracks licensed under the [Pixabay License](https://pixabay.com/service/license/). All rights to these compositions belong to their respective creators on Pixabay.
 
