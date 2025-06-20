@@ -3,4 +3,5 @@ Step into a vibrant pixel-art world of adventure, mystery, and danger. Battle po
 This is the main page: https://sullydux.github.io/Curse-of-the-Forsaken-Isle/ and the wiki page:https://sullydux.github.io/Curse-of-the-Forsaken-Isle/Wiki/. This is the first game in the series the Forsaken Isle.
 
 Rate the game here: https://forms.gle/Q1eByKeqGQSYUcnM9
-See [Music Credits](./CREDITS.md) for full music and third-party asset attributions.
+
+See the [Credits](./CREDITS.md) for full music and third-party asset attributions.
