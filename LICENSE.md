@@ -32,3 +32,12 @@ All rights to the story, characters, worldbuilding, and creative content within 
 
 Third-party content (such as music from Pixabay) is credited separately.  
 See the [Credits](./Credits.md) for full music and third-party asset attributions.
+
+## Aproved uses
+
+**Game is officially available at the following locations:**
+
+[On Scratch,](https://scratch.mit.edu/projects/963768137/)
+[Curse of the Forsaken Isle website,](https://sullydux.github.io/Curse-of-the-Forsaken-Isle/)
+and
+[SullyForge](https://sullydux.github.io/SullyForge/)
