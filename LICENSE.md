@@ -31,4 +31,4 @@ All rights to the story, characters, worldbuilding, and creative content within 
 ---
 
 Third-party content (such as music from Pixabay) is credited separately.  
-See the [Credits](./CREDITS.md) for full music and third-party asset attributions.
+See the [Credits](./Credits.md) for full music and third-party asset attributions.
