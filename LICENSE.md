@@ -6,7 +6,7 @@
 
 ---
 
-© 2025 Sully Dux
+© 2025 Sullydux
 
 All rights to the story, characters, worldbuilding, and creative content within this repository are reserved by the author. This includes but is not limited to:
 
