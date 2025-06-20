@@ -24,7 +24,7 @@ All rights to the story, characters, worldbuilding, and creative content within 
 - Link to the GitHub page or related project sites  
 
 ## ❌ You may not:
-- Copy, reproduce, reuse, modify, or distribute any content from this project  
+- Copy, reproduce, reuse, modify, or distribute any content from this project *Exept on Scratch with proper credits*
 - Use any part of this project for **commercial purposes**  
 - Claim or imply ownership or authorship of this project  
 
