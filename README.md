@@ -4,4 +4,4 @@ This is the main page: https://sullydux.github.io/Curse-of-the-Forsaken-Isle/ an
 
 Rate the game here: https://forms.gle/Q1eByKeqGQSYUcnM9
 
-See the [Credits](./CREDITS.md) for full music and third-party asset attributions.
+See the [Credits](./Credits.md) for full music and third-party asset attributions.
