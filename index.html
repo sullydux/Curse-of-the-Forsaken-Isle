@@ -30,7 +30,7 @@
       padding: 0;
       height: 100vh;
       width: 100vw;
-      overflow: hidden;
+      overflow: auto;
       font-family: 'Orbitron', sans-serif;
       background-color: #3c9141;
       display: flex;
@@ -216,38 +216,6 @@
   }
 </script>
 
-<button id="toggle-signin" style="position: fixed; bottom: 150px; left: 15px; padding: 10px 14px; background-color: rgba(0,0,0,0.7); color: white; border: none; border-radius: 8px; font-size: 0.9em; cursor: pointer; z-index: 1000; box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: background-color 0.3s ease, transform 0.2s ease;">
-  Show Sign In
-</button>
-
-<button id="toggle-dashboard" style="position: fixed; bottom: 105px; left: 15px; padding: 10px 14px; background-color: rgba(0,0,0,0.7); color: white; border: none; border-radius: 8px; font-size: 0.9em; cursor: pointer; z-index: 1000; box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: background-color 0.3s ease, transform 0.2s ease;">
-  Show Dashboard
-</button>
-
-<!-- Iframes -->
-<iframe id="signin-frame" src="HTML_Embeds/signin.html" style="display:none; position: fixed; top: 240px; left: 50%; transform: translateX(-50%); width: 30%; height: 65%; border: 2px solid white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); background: white; z-index: 999;"></iframe>
-
-<iframe id="dashboard-frame" src="HTML_Embeds/Dash.html" style="display:none; position: fixed; top: 210px; left: 50%; transform: translateX(-50%); width: 55%; height: 70%; border: 2px solid white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); background: white; z-index: 999;"></iframe>
-
-<script>
-  const signinBtn = document.getElementById('toggle-signin');
-  const dashboardBtn = document.getElementById('toggle-dashboard');
-  const signinFrame = document.getElementById('signin-frame');
-  const dashboardFrame = document.getElementById('dashboard-frame');
-
-  signinBtn.addEventListener('click', () => {
-    const visible = signinFrame.style.display === 'block';
-    signinFrame.style.display = visible ? 'none' : 'block';
-    signinBtn.textContent = visible ? 'Show Sign In' : 'Hide Sign In';
-  });
-
-  dashboardBtn.addEventListener('click', () => {
-    const visible = dashboardFrame.style.display === 'block';
-    dashboardFrame.style.display = visible ? 'none' : 'block';
-    dashboardBtn.textContent = visible ? 'Show Dashboard' : 'Hide Dashboard';
-  });
-</script>
-
 <button id="toggle-notes" style="position: fixed; bottom: 15px; left: 15px; padding: 10px 14px; background-color: rgba(0, 0, 0, 0.7); color: white; border: none; border-radius: 8px; font-size: 0.9em; cursor: pointer; z-index: 1000; box-shadow: 0 2px 6px rgba(0,0,0,0.3); transition: background-color 0.3s ease, transform 0.2s ease;">
   Show Notes
 </button>
@@ -265,6 +233,26 @@
   });
 </script>
 
+<script>
+  const iframes = [
+    document.querySelector('.game-frame'),
+    document.getElementById('wiki-frame'),
+    document.getElementById('notes-frame')
+  ];
+
+  let isInIframe = false;
+
+  iframes.forEach(iframe => {
+    iframe.addEventListener('mouseenter', () => {
+      isInIframe = true;
+      document.body.style.overflow = 'hidden';
+    });
+    iframe.addEventListener('mouseleave', () => {
+      isInIframe = false;
+      document.body.style.overflow = 'auto';
+    });
+  });
+</script>
+
 </body>
 </html>
-
