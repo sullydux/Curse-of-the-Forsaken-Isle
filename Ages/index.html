@@ -1,0 +1,156 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Timeline of the Forsaken Isle</title>
+  <link rel="icon" href="Icon.png" type="image/png" />
+  <style>
+    :root {
+      --bg: #3c9141;
+      --text: #fff;
+      --timeline-bg: #2a5d2f;
+      --accent: #ffffff;
+      --line: #ffffff50;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding-left: 30px;
+      border-left: 3px solid var(--line);
+      max-width: 900px;
+    }
+
+    .entry {
+      position: relative;
+      margin: 2rem 0;
+      padding-left: 2rem;
+    }
+
+    .entry::before {
+      content: "";
+      position: absolute;
+      left: -17px;
+      top: 0.4rem;
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--accent);
+      border: 3px solid var(--timeline-bg);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .entry-content {
+      background-color: var(--timeline-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .entry h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.75rem;
+      color: var(--accent);
+    }
+
+    .era-note {
+      font-style: italic;
+      color: #d8ffd6;
+      margin-top: 0.5rem;
+    }
+
+    #top-button {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .entry-content {
+        padding: 1rem;
+        font-size: 0.95rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .entry h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>The Eras of the Forsaken Isle</h1>
+
+  <div class="timeline">
+    <div class="entry">
+      <div class="entry-content">
+        <h2>Notes:</h2>
+        <p>This shows the ages of my fantisy universe, Fosaken Isle, with one game so far.</p>
+        <p>This has spoilers, beware.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-content">
+        <h2>First Era</h2>
+        <p>This was an age of chaos, where the dwarves wandered in scattered bands, pursued by monstrous forces that stalked the wilds. They had no strongholds, no alliances — only the instinct to endure and the courage to fight when all else failed.</p>
+        <p>Yet within the forge-smoke and bloodshed, a culture began to take root. The dwarves etched runes of defiance, learned to shape metal with flame, and sowed the first seeds of unity. Though primitive and hardened, they began to glimpse a destiny greater than mere survival.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-content">
+        <h2>Second Era</h2>
+        <p>Out of fire and frost rose a warrior of unmatched might — a leader who united the dwarves and raised their first great stronghold from the wilderness. Under this guardian, the clans stood as one, carving out order from the jaws of a monstrous world.</p>
+        <p>They bested beasts, braved blizzards, and sealed the dread Frost King within a tomb of ice, bound by runes and ancient trials. Deep beneath the molten earth, they imprisoned Basaltor, a hulking terror of living stone, locking him away in a dimension of lava. In this age of glory, their forges roared with mastery, shaping iron into weapons of renown and crafting machines that held memory in runes and metal. From sunken pits, they drew spice from desert-born Sandtrout — a rare substance that hardened iron and enriched their feasts.</p>
+        <p>But with the passing of ages, the champion’s name was lost. His tale, once carved in stone and sung in halls, faded into fragmented myth. Murals cracked, and runes wore thin — yet the unity he forged endured. The dwarves remembered not the hand that led them, but the world that hand had shaped.</p>
+        <p class="era-note"><strong>📍 Forsaken Isle: Gates of War</strong> — The game is still in the idea phase and will not be released for a while.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-content">
+        <h2>Third Era</h2>
+        <p>Calamity struck again, not from armies — but from the Iron-Tusked Doom, a boar of colossal fury that razed their village and shattered their spirit. Their once-thriving homeland was lost beneath the beast’s wrath, abandoned to the silence of ruin.</p>
+        <p>The dwarves, broken but unbowed, fled and founded a new settlement. Their ancient knowledge, their forges, and their legacy — all were swallowed by time. In this new place, they began again from ash and memory, clinging to stories and instincts passed down in hushed voices.</p>
+        <p class="era-note"><strong>📍 Curse of the Forsaken Isle</strong> unfolds within this age of quiet resilience and forgotten power.</p>
+      </div>
+    </div>
+  </div>
+
+  <button id="top-button">Back to Top</button>
+
+  <script>
+    document.getElementById('top-button').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
