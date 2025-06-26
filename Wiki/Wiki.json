@@ -699,12 +699,12 @@
     ]
   },
   {
-    "title": "Marbled Gomma",
-    "spoiler": "false",
+    "title": "Basaltor",
+    "spoiler": "True",
     "category": "Boss",
     "content": [
-      "How to find: in a boss dimension",
-      "How to kill: hit with wepaon",
+      "How to find: make a portal and enter it",
+      "How to kill: hit with wepaon or shoot with a bow",
       "Drops: nothing"
     ]
   },
@@ -759,11 +759,23 @@
     ]
   },
   {
-    "title": "Test",
+    "title": "leperchaun",
     "spoiler": "True",
+    "category": "NPC",
+    "content": [
+      "Use: has a quest for you",
+      "Quest: find his gold and recive a reward"
+    ]
+  },
+  {
+    "title": "Music",
+    "spoiler": "False",
     "category": "Mechanic",
     "content": [
-      "Note: dogs are the best"
+      "Day time & inventory: Menu Music on Pixabay",
+      "Night time & cave maps: Glitch in the Dark on Pixabay",
+      "Village: Raining Village - Video Game Theme on Pixabay",
+      "Boss maps: Fast Paced Boss Battle on Pixabay"
     ]
   }
  ]
