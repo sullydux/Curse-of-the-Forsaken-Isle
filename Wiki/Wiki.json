@@ -757,6 +757,14 @@
       "Warning: goblins like to spawn in dark areas",
       "Note: You can carry a torch in your hand and it will light up a small area around you"
     ]
+  },
+  {
+    "title": "Test",
+    "spoiler": "True",
+    "category": "Mechanic",
+    "content": [
+      "Note: dogs are the best"
+    ]
   }
  ]
  
