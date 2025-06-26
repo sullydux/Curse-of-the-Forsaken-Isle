@@ -76,6 +76,17 @@
       font-weight: bold;
     }
 
+.card-spoiler {
+  margin-left: 0.5rem;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  background-color: #e74c3c; /* Red for danger/spoiler */
+  color: #fff;
+}
+
     .rarity-common {
       background-color: #aaa;
       color: #222;
@@ -184,7 +195,7 @@
   const showSpoilers = document.getElementById('spoiler-toggle')?.checked;
 
   items.forEach(({ title, category, content, rarity, spoiler }) => {
-    const isSpoiler = spoiler === "True";
+    const isSpoiler = (spoiler + '').toLowerCase() === "true";
 
     if (isSpoiler && !showSpoilers) return;
 
@@ -211,6 +222,13 @@
       rarityBadge.textContent = rarityClean.charAt(0).toUpperCase() + rarityClean.slice(1);
       titleElement.appendChild(rarityBadge);
     }
+
+if (isSpoiler && showSpoilers) {
+  const spoilerBadge = document.createElement('span');
+  spoilerBadge.className = 'card-spoiler';
+  spoilerBadge.textContent = 'Spoiler';
+  titleElement.appendChild(spoilerBadge);
+}
 
     const contentWrapper = document.createElement('div');
     content.forEach(line => {
