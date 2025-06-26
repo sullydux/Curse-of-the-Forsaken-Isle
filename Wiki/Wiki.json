@@ -1,6 +1,7 @@
 [
   {
     "title": "Arrow",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "common",
     "content": [
@@ -12,6 +13,7 @@
   },
   {
     "title": "Diamond Mace",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "legendary",
     "content": [
@@ -23,6 +25,7 @@
   },
   {
     "title": "Iron Axe",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "uncommon",
     "content": [
@@ -34,6 +37,7 @@
   },
   {
     "title": "Iron Pickaxe",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "uncommon",
     "content": [
@@ -44,6 +48,7 @@
   },
   {
     "title": "Jade Knife",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "rare",
     "content": [
@@ -55,6 +60,7 @@
   },
   {
     "title": "Knife",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "common",
     "content": [
@@ -66,6 +72,7 @@
   },
   {
     "title": "Sharp Iron Axe",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "uncommon",
     "content": [
@@ -77,6 +84,7 @@
   },
   {
     "title": "Sharp Stone Axe",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "common",
     "content": [
@@ -88,6 +96,7 @@
   },
   {
     "title": "Sharp Wood Axe",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "common",
     "content": [
@@ -99,6 +108,7 @@
   },
   {
     "title": "Spear",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "common",
     "content": [
@@ -110,6 +120,7 @@
   },
   {
     "title": "Stone Axe",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "common",
     "content": [
@@ -121,6 +132,7 @@
   },
   {
     "title": "Stone Pickaxe",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "common",
     "content": [
@@ -131,6 +143,7 @@
   },
   {
     "title": "Wood Axe",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "common",
     "content": [
@@ -142,6 +155,7 @@
   },
   {
     "title": "Wood Pickaxe",
+    "spoiler": "false",
     "category": "Weapon",
     "rarity": "common",
     "content": [
@@ -152,6 +166,7 @@
   },
   {
     "title": "Shovel",
+    "spoiler": "false",
     "category": "Tool",
     "rarity": "common",
     "content": [
@@ -162,6 +177,7 @@
   },
   {
     "title": "Bow",
+    "spoiler": "false",
     "category": "Tool",
     "rarity": "common",
     "content": [
@@ -172,6 +188,7 @@
   },
   {
     "title": "Stick",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -181,6 +198,7 @@
   },
   {
     "title": "Log",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -190,6 +208,7 @@
   },
   {
     "title": "Iron Ore",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -199,6 +218,7 @@
   },
   {
     "title": "Stone",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -207,6 +227,7 @@
   },
   {
     "title": "Raw Bacon",
+    "spoiler": "false",
     "category": "Food",
     "rarity": "common",
     "content": [
@@ -216,6 +237,7 @@
   },
   {
     "title": "Bacon",
+    "spoiler": "false",
     "category": "Food",
     "rarity": "common",
     "content": [
@@ -225,6 +247,7 @@
   },
   {
     "title": "Steak",
+    "spoiler": "false",
     "category": "Food",
     "rarity": "common",
     "content": [
@@ -234,6 +257,7 @@
   },
   {
     "title": "Cooked Steak",
+    "spoiler": "false",
     "category": "Food",
     "rarity": "uncommon",
     "content": [
@@ -243,6 +267,7 @@
   },
   {
     "title": "Hydromelon",
+    "spoiler": "false",
     "category": "Food",
     "rarity": "uncommon",
     "content": [
@@ -253,6 +278,7 @@
   },
   {
     "title": "Crab",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -261,6 +287,7 @@
   },
   {
     "title": "Cooked Crab",
+    "spoiler": "false",
     "category": "Food",
     "rarity": "common",
     "content": [
@@ -270,6 +297,7 @@
   },
   {
     "title": "Bread",
+    "spoiler": "false",
     "category": "Food",
     "rarity": "common",
     "content": [
@@ -279,6 +307,7 @@
   },
   {
     "title": "Wheat",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -287,6 +316,7 @@
   },
   {
     "title": "Seed",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -295,6 +325,7 @@
   },
   {
     "title": "Strawberries",
+    "spoiler": "false",
     "category": "Food",
     "rarity": "common",
     "content": [
@@ -304,6 +335,7 @@
   },
   {
     "title": "Chillshroom",
+    "spoiler": "false",
     "category": "Food",
     "rarity": "uncommon",
     "content": [
@@ -314,6 +346,7 @@
   },
   {
     "title": "Coal",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -323,6 +356,7 @@
   },
   {
     "title": "Bone",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -332,6 +366,7 @@
   },
   {
     "title": "Iron",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -341,6 +376,7 @@
   },
   {
     "title": "String",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -350,6 +386,7 @@
   },
   {
     "title": "Torch",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -359,6 +396,7 @@
   },
   {
     "title": "Furnace",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -370,6 +408,7 @@
   },
   {
     "title": "Portal",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "rare",
     "content": [
@@ -379,6 +418,7 @@
   },
   {
     "title": "Shield",
+    "spoiler": "false",
     "category": "Protection",
     "rarity": "common",
     "content": [
@@ -389,6 +429,7 @@
   },
   {
     "title": "Iron Chestplate",
+    "spoiler": "false",
     "category": "Protection",
     "rarity": "uncommon",
     "content": [
@@ -399,6 +440,7 @@
   },
   {
     "title": "Chainmail Vest",
+    "spoiler": "false",
     "category": "Protection",
     "rarity": "common",
     "content": [
@@ -409,6 +451,7 @@
   },
   {
     "title": "Leather Coat",
+    "spoiler": "false",
     "category": "Protection",
     "rarity": "common",
     "content": [
@@ -419,6 +462,7 @@
   },
   {
     "title": "Warm Chainmail Vest",
+    "spoiler": "false",
     "category": "Protection",
     "rarity": "uncommon",
     "content": [
@@ -429,6 +473,7 @@
   },
   {
     "title": "Miners Helment",
+    "spoiler": "false",
     "category": "Protection",
     "rarity": "uncommon",
     "content": [
@@ -439,6 +484,7 @@
   },
   {
     "title": "Leather",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -448,6 +494,7 @@
   },
   {
     "title": "Chain",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -457,6 +504,7 @@
   },
   {
     "title": "Chest",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -468,6 +516,7 @@
   },
   {
     "title": "Campfire",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -479,6 +528,7 @@
   },
   {
     "title": "Sapling",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "common",
     "content": [
@@ -489,6 +539,7 @@
   },
   {
     "title": "Sandworm Tooth",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "legendary",
     "content": [
@@ -498,6 +549,7 @@
   },
   {
     "title": "Diamond",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "legendary",
     "content": [
@@ -507,6 +559,7 @@
   },
   {
     "title": "Jade",
+    "spoiler": "false",
     "category": "Item",
     "rarity": "Uncommon",
     "content": [
@@ -517,6 +570,7 @@
   },
   {
     "title": "Crab",
+    "spoiler": "false",
     "category": "Animal",
     "content": [
       "Where they live: in sandy and wet places",
@@ -525,6 +579,7 @@
   },
   {
     "title": "Pig",
+    "spoiler": "false",
     "category": "Animal",
     "content": [
       "Where they live: in a warm climate",
@@ -533,6 +588,7 @@
   },
   {
     "title": "Cow",
+    "spoiler": "false",
     "category": "Animal",
     "content": [
       "Where they live: in a wam climate",
@@ -541,6 +597,7 @@
   },
   {
     "title": "Dwarves",
+    "spoiler": "false",
     "category": "NPC",
     "content": [
       "Where they live: in villages",
@@ -551,6 +608,7 @@
   },
   {
     "title": "Rock",
+    "spoiler": "false",
     "category": "Resource",
     "content": [
       "How to find: usally in caves",
@@ -560,6 +618,7 @@
   },
   {
     "title": "Tree",
+    "spoiler": "false",
     "category": "Resource",
     "content": [
       "How to find: never in caves",
@@ -569,6 +628,7 @@
   },
   {
     "title": "Save",
+    "spoiler": "false",
     "category": "Mechanic",
     "content": [
       "Use: to save your game",
@@ -578,6 +638,7 @@
   },
   {
     "title": "Load",
+    "spoiler": "false",
     "category": "Mechanic",
     "content": [
       "Use: to load a game save",
@@ -587,6 +648,7 @@
   },
   {
     "title": "Craft",
+    "spoiler": "false",
     "category": "Mechanic",
     "content": [
       "Use: to make new tools and materials",
@@ -596,6 +658,7 @@
   },
   {
     "title": "Respawn",
+    "spoiler": "false",
     "category": "Mechanic",
     "content": [
       "How to set: sleep by campfire, distroy campfire to set spawn to default",
@@ -605,6 +668,7 @@
   },
   {
     "title": "Inventory",
+    "spoiler": "false",
     "category": "Mechanic",
     "content": [
       "Use: store items",
@@ -616,6 +680,7 @@
   },
   {
     "title": "Spider",
+    "spoiler": "false",
     "category": "Monster",
     "content": [
       "How to find: in caves",
@@ -625,6 +690,7 @@
   },
   {
     "title": "Goblin",
+    "spoiler": "false",
     "category": "Monster",
     "content": [
       "How to find: in caves or on land at night",
@@ -634,6 +700,7 @@
   },
   {
     "title": "Marbled Gomma",
+    "spoiler": "false",
     "category": "Boss",
     "content": [
       "How to find: in a boss dimension",
@@ -643,6 +710,7 @@
   },
   {
     "title": "Sandworm",
+    "spoiler": "false",
     "category": "Boss",
     "content": [
       "How to find: desert, and it will find you first",
@@ -652,6 +720,7 @@
   },
   {
     "title": "Walk",
+    "spoiler": "false",
     "category": "Mechanic",
     "content": [
       "Use: to move",
@@ -660,6 +729,7 @@
   },
   {
     "title": "Eat",
+    "spoiler": "false",
     "category": "Mechanic",
     "content": [
       "Use: not starve",
@@ -669,6 +739,7 @@
   },
   {
     "title": "View",
+    "spoiler": "false",
     "category": "Mechanic",
     "content": [
       "Note: it shows one peace of the map at a time",
@@ -678,6 +749,7 @@
   },
   {
     "title": "Light",
+    "spoiler": "false",
     "category": "Mechanic",
     "content": [
       "Time: there is a day and night cycle it lasts 17 minutes for a full cycle",

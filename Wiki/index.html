@@ -157,6 +157,11 @@
     
   </div>
 
+<label style="color: white; font-size: 1rem;">
+  <input type="checkbox" id="spoiler-toggle">
+  Show Spoilers
+</label>
+
   <div id="card-container"></div>
 
   <button id="top-button">Back to Top</button>
@@ -173,48 +178,54 @@
     }
 
     function renderCards() {
-      const container = document.getElementById('card-container');
-      container.innerHTML = '';
+  const container = document.getElementById('card-container');
+  container.innerHTML = '';
 
-      items.forEach(({ title, category, content, rarity }) => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.setAttribute('data-category', category);
+  const showSpoilers = document.getElementById('spoiler-toggle')?.checked;
 
-        const titleElement = document.createElement('h2');
-        titleElement.className = 'card-title';
+  items.forEach(({ title, category, content, rarity, spoiler }) => {
+    const isSpoiler = spoiler === "true";
 
-        const categoryBadge = document.createElement('span');
-        categoryBadge.className = 'card-category';
-        categoryBadge.textContent = category;
-        titleElement.textContent = title;
-        titleElement.appendChild(categoryBadge);
+    if (isSpoiler && !showSpoilers) return;
 
-        // Clean and validate rarity
-        const allowedRarities = ['common', 'uncommon', 'rare', 'legendary'];
-        const rarityClean = rarity?.trim().toLowerCase();
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.setAttribute('data-category', category);
 
-        if (allowedRarities.includes(rarityClean)) {
-          const rarityBadge = document.createElement('span');
-          rarityBadge.className = `card-rarity rarity-${rarityClean}`;
-          rarityBadge.textContent = rarityClean.charAt(0).toUpperCase() + rarityClean.slice(1);
-          titleElement.appendChild(rarityBadge);
-        }
+    const titleElement = document.createElement('h2');
+    titleElement.className = 'card-title';
 
-        const contentWrapper = document.createElement('div');
-        content.forEach(line => {
-          const p = document.createElement('p');
-          p.textContent = line;
-          contentWrapper.appendChild(p);
-        });
+    const categoryBadge = document.createElement('span');
+    categoryBadge.className = 'card-category';
+    categoryBadge.textContent = category;
+    titleElement.textContent = title;
+    titleElement.appendChild(categoryBadge);
 
-        card.appendChild(titleElement);
-        card.appendChild(contentWrapper);
-        container.appendChild(card);
-      });
+    // Rarity badge
+    const allowedRarities = ['common', 'uncommon', 'rare', 'legendary'];
+    const rarityClean = rarity?.trim().toLowerCase();
 
-      filterCards();
+    if (allowedRarities.includes(rarityClean)) {
+      const rarityBadge = document.createElement('span');
+      rarityBadge.className = `card-rarity rarity-${rarityClean}`;
+      rarityBadge.textContent = rarityClean.charAt(0).toUpperCase() + rarityClean.slice(1);
+      titleElement.appendChild(rarityBadge);
     }
+
+    const contentWrapper = document.createElement('div');
+    content.forEach(line => {
+      const p = document.createElement('p');
+      p.textContent = line;
+      contentWrapper.appendChild(p);
+    });
+
+    card.appendChild(titleElement);
+    card.appendChild(contentWrapper);
+    container.appendChild(card);
+  });
+
+  filterCards();
+}
 
     const searchInput = document.getElementById('search');
     const filterSelect = document.getElementById('filter');
@@ -264,6 +275,7 @@ if (!isInIframe && (isLocal || isWeb)) {
 }
 
     loadItems();
+    document.getElementById('spoiler-toggle').addEventListener('change', renderCards);
   </script>
 </body>
 </html>
