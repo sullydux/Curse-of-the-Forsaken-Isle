@@ -184,7 +184,7 @@
   const showSpoilers = document.getElementById('spoiler-toggle')?.checked;
 
   items.forEach(({ title, category, content, rarity, spoiler }) => {
-    const isSpoiler = spoiler === "true";
+    const isSpoiler = spoiler === "True";
 
     if (isSpoiler && !showSpoilers) return;
 
