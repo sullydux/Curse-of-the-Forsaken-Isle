@@ -37,7 +37,6 @@ See the [Credits](./Credits.md) for full music and third-party asset attribution
 
 **Game is officially available at the following locations:**
 
-[Curse of the Forsaken Isle website,](https://sullydux.github.io/Curse-of-the-Forsaken-Isle/)
-and
-[SullyForge](https://sullydux.github.io/SullyForge/)
-[On Scratch,](https://scratch.mit.edu/projects/963768137/) and proper remixes of this
+[Curse of the Forsaken Isle website](https://sullydux.github.io/Curse-of-the-Forsaken-Isle/),
+[SullyForge](https://sullydux.github.io/SullyForge/),
+[on Scratch](https://scratch.mit.edu/projects/963768137/) and proper [Scratch](https://scratch.mit.edu/) remixes of this
